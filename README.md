@@ -2,6 +2,8 @@
 
 Night trains across Europe, planned in plain language by an assistant that does not make things up.
 
+Try it live at [dormio.streamlit.app](https://dormio.streamlit.app).
+
 Dormio is a conversational planner for Europe's night trains. You ask for a trip the way you would ask a friend who knows the network, something like Vienna to Rome, or night trains from Krakow, and you get real routes, real departure times, the sleeping options, and a clean way to book. The routes come from a graph over the actual network rather than from a language model, so the answer is correct and the app cannot put you on a train that does not exist. I built it because night trains are returning across Europe while the information about them stays scattered across dozens of operators, with no single calm place to plan one. Dormio pulls the whole network into one conversation, one map, and one honest answer.
 
 ## The problem
