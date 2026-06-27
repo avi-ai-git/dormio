@@ -4,19 +4,19 @@ Night trains across Europe, planned in plain language by an assistant that does 
 
 Try it live at [dormio.streamlit.app](https://dormio.streamlit.app).
 
-Dormio is a conversational planner for Europe's night trains. You ask for a trip the way you would ask a friend who knows the network, something like Vienna to Rome, or night trains from Krakow, and you get real routes, real departure times, the sleeping options, and a clean way to book. The routes come from a graph over the actual network rather than from a language model, so the answer is correct and the app cannot put you on a train that does not exist. I built it because night trains are returning across Europe while the information about them stays scattered across dozens of operators, with no single calm place to plan one. Dormio pulls the whole network into one conversation, one map, and one honest answer.
+Dormio is a conversational planner for Europe's night trains. A traveller asks for a trip the way they would ask a friend who knows the network, something like Vienna to Rome, or night trains from Krakow, and gets real routes, real departure times, the sleeping options, and a clean way to book. The routes come from a graph over the actual network rather than from a language model, so the answer is correct and the app cannot put anyone on a train that does not exist. I built it because night trains are returning across Europe while the information about them stays scattered across dozens of operators, with no single calm place to plan one. Dormio pulls the whole network into one conversation, one map, and one honest answer.
 
 ## The problem
 
-Night trains are quietly coming back. You lie down in Vienna and wake up in Rome. You skip the airport, save a hotel night, and travel on a fraction of the carbon of a flight. The trouble is planning one. Every country has its own operator, every operator has its own website, and no single place tells you which sleeper routes exist, what you can sleep in, and how to book. The general journey planners make it worse, because you ask for an overnight train and they hand you a night bus or a cheap flight, since they return whatever moves next.
+Night trains are quietly coming back. A traveller lies down in Vienna and wakes up in Rome, skips the airport, saves a hotel night, and travels on a fraction of the carbon of a flight. The trouble is planning one. Every country has its own operator, every operator has its own website, and no single place says which sleeper routes exist, what the sleeping options are, and how to book. The general journey planners make it worse, because a request for an overnight train comes back as a night bus or a cheap flight, since they return whatever moves next.
 
 I wanted one place that answers the real questions. Is there a night train from here to there. What can I sleep in. How do I book it. And when there is no night train, it should say so plainly instead of inventing one.
 
-## What you can do
+## What it does
 
 Dormio has three tabs.
 
-Ask Dormio is the conversation. You type a trip in plain words and keep talking, and it remembers the thread. Ask for a route and it ranks the best night trains, a direct sleeper or a journey with one or two changes, and it shows the real alternatives, Berlin to Bucharest by way of Budapest or by way of Vienna. Ask a how-does-it-work question, like whether an Interrail pass covers a couchette, and it answers from real guides and operator notes and shows you the sources. When a trip runs off the edge of the network, like the last stretch from Nice down to Monaco, it searches the web for that one leg and tells you the part that came from a search.
+Ask Dormio is the conversation. The user types a trip in plain words and keeps talking, and it remembers the thread. Ask for a route and it ranks the best night trains, a direct sleeper or a journey with one or two changes, and it shows the real alternatives, Berlin to Bucharest by way of Budapest or by way of Vienna. Ask a how-does-it-work question, like whether an Interrail pass covers a couchette, and it answers from real guides and operator notes and shows the sources. When a trip runs off the edge of the network, like the last stretch from Nice down to Monaco, it searches the web for that one leg and labels the part that came from a search.
 
 The Night Map is the whole network on one map. Every night train in Europe drawn as an arc, with a switch between Night Train Routes and Night Train Operators. Filter by country, sort by duration or by when a train leaves or arrives, narrow to trains that carry bikes, and the map and the list move together. Each card shows the times, the cities the train calls at, and the CO2 for the trip.
 
@@ -27,7 +27,7 @@ How It Works explains the design in plain words, lists the coverage, and sets ou
 Every message runs through the same small pipeline.
 
 ```
-your message
+a question
    -> input safety (rate limit, prompt-injection filter, Mistral moderation)
    -> router (route, knowledge, both, or chitchat, plus any cities it can read)
         route      -> the night-train graph, a deterministic lookup over 204 routes
@@ -41,7 +41,7 @@ The rule that holds the whole thing together is simple. The model never decides 
 
 ## The design decisions, and why I went this way
 
-Routing comes from a graph, not the model. A language model asked to plan a night train will invent one, a plausible train number, a believable time, a route that does not run. So routing is a deterministic search over the real network. Cities are nodes, services are edges, and a weighted k-shortest-paths search returns the best few journeys. The same question always gives the same answer, the app cannot hallucinate a train, and an honest no night train is a valid result. This is also the part you can read and check line by line, which is the point.
+Routing comes from a graph, not the model. A language model asked to plan a night train will invent one, a plausible train number, a believable time, a route that does not run. So routing is a deterministic search over the real network. Cities are nodes, services are edges, and a weighted k-shortest-paths search returns the best few journeys. The same question always gives the same answer, the app cannot hallucinate a train, and an honest no night train is a valid result. This is also the part anyone can read and check line by line, which is the point.
 
 Knowledge comes from retrieval, with citations. The stable questions, how to book, whether a pass is valid, what a couchette is, do not belong in a graph. They belong in documents. I embed a small corpus of guides and operator notes into a vector store and retrieve the closest chunks, then the answer cites them. I chunk one document per operator or per topic, never one per route, because the per-route version I tried earlier produced duplicates and gave the model room to blur facts together.
 
@@ -67,7 +67,7 @@ Every route also carries a CO2 figure. Where the source has one, Dormio shows it
 
 ## Honesty and ethics
 
-Nothing about you is kept. There is no account and no tracking. A question is screened, answered, and forgotten, and the only stored data is the open night-train dataset.
+No data about the user is kept. There is no account and no tracking. A question is screened, answered, and forgotten, and the only stored data is the open night-train dataset.
 
 The same answer goes to everyone. Routes come from the deterministic graph, not the model, so there is no model bias in what gets suggested and nobody is quietly shown a different train.
 
@@ -81,11 +81,11 @@ A golden set of questions, each tagged with the tool it should reach and the out
 
 ## The stack
 
-Streamlit for the app and the chat, because it gave me a real map and a deployable app in one language. LangGraph for the agent, an explicit state machine I can trace. ChromaDB as the vector store for retrieval, in memory with the small embedding model it ships with. deck.gl for the map on a token-free basemap, so it needs no map key. Langfuse for optional tracing. Mistral for input moderation, kept separate from the chat model. The chat model is whichever of the three you pick.
+Streamlit for the app and the chat, because it gave me a real map and a deployable app in one language. LangGraph for the agent, an explicit state machine I can trace. ChromaDB as the vector store for retrieval, in memory with the small embedding model it ships with. deck.gl for the map on a token-free basemap, so it needs no map key. Langfuse for optional tracing. Mistral for input moderation, kept separate from the chat model. The chat model is whichever of the three is selected in the sidebar.
 
 ## Run it locally
 
-You need Python 3.10 or newer.
+Python 3.10 or newer is required.
 
 ```bash
 pip install -r requirements.txt
