@@ -1,0 +1,10 @@
+# Normalise line endings so the repo stays LF and Windows checkouts stop
+# spewing CRLF warnings on every commit.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary

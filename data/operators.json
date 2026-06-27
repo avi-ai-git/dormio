@@ -1,0 +1,3146 @@
+[
+  {
+    "operator_id": "db",
+    "canonical_name": "DB (Deutsche Bahn)",
+    "short_name": "DB",
+    "aliases": [
+      "Deutsche Bahn",
+      "DB Fernverkehr",
+      "German Rail"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "DE",
+      "AT",
+      "CH",
+      "FR",
+      "NL",
+      "BE",
+      "PL",
+      "CZ",
+      "DK",
+      "IT"
+    ],
+    "hq_country": "DE",
+    "service_types": [
+      "HSR",
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.bahn.de",
+    "booking_notes": "Sparpreis Europa saver fares available. Seat reservations €5.20 optional on ICE. DB Navigator app excellent.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.bahn.de",
+    "approximate_prices_eur": {
+      "short_domestic": "€17.90-55",
+      "long_domestic": "€29.90-130",
+      "key_international": "€39-120"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Largest state operator in Europe. Punctuality declined in recent years. Exited night trains in 2016 (now ÖBB Nightjet operates most). Major infrastructure investment ongoing (Riedbahn, Hamburg-Berlin).",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "sncf",
+    "canonical_name": "SNCF Voyageurs",
+    "short_name": "SNCF",
+    "aliases": [
+      "Société Nationale des Chemins de fer Français",
+      "French Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "FR",
+      "DE",
+      "BE",
+      "LU",
+      "CH",
+      "IT",
+      "ES",
+      "GB"
+    ],
+    "hq_country": "FR",
+    "service_types": [
+      "HSR",
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.sncf-connect.com",
+    "booking_notes": "TGV requires mandatory reservation. Ouigo is low-cost subsidiary. Intercités de Nuit for night trains. TER regional trains no reservation needed.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "interrail_reservation_url": "https://www.sncf-connect.com",
+    "approximate_prices_eur": {
+      "short_domestic": "€25-99",
+      "long_domestic": "€35-130",
+      "key_international": "€29-120"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "French state operator. TGV mandatory reservation. Ouigo low-cost is separate brand. Intercités de Nuit serves French regions (Paris-Briançon, Paris-Latour-de-Carol). Paris-Nice and Paris-Toulouse night trains discontinued 2020 — not restored.",
+    "gauge": "1435 (standard)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_sncf.jpg"
+  },
+  {
+    "operator_id": "oebb",
+    "canonical_name": "ÖBB (Österreichische Bundesbahnen)",
+    "short_name": "ÖBB",
+    "aliases": [
+      "Austrian Federal Railways",
+      "Nightjet"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "AT",
+      "DE",
+      "CH",
+      "IT",
+      "HU",
+      "CZ",
+      "SK",
+      "SI",
+      "HR",
+      "NL",
+      "BE",
+      "FR"
+    ],
+    "hq_country": "AT",
+    "service_types": [
+      "HSR",
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.oebb.at",
+    "booking_notes": "Nightjet at nightjet.com or oebb.at. Sparschiene saver tickets from €9.90. Excellent mobile app.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.nightjet.com",
+    "approximate_prices_eur": {
+      "short_domestic": "€9.90-45",
+      "long_domestic": "€19.90-90",
+      "key_international": "€14.90-60"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Europe's largest night train operator (Nightjet). RailJet premium service. Excellent booking platform. WESTbahn competitor on Wien-Salzburg corridor.",
+    "gauge": "1435 (standard)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_obb.jpg"
+  },
+  {
+    "operator_id": "sbb",
+    "canonical_name": "SBB CFF FFS",
+    "short_name": "SBB",
+    "aliases": [
+      "Schweizerische Bundesbahnen",
+      "Swiss Federal Railways",
+      "Chemins de fer fédéraux suisses"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "CH",
+      "DE",
+      "FR",
+      "IT",
+      "AT"
+    ],
+    "hq_country": "CH",
+    "service_types": [
+      "HSR",
+      "IC",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.sbb.ch",
+    "booking_notes": "Supersaver tickets from CHF 16 with half-fare card. Swiss Travel Pass for tourists. TGV Lyria joint with SNCF. sbb.ch is excellent.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.sbb.ch",
+    "approximate_prices_eur": {
+      "short_domestic": "€25-52",
+      "long_domestic": "€52-92",
+      "key_international": "€29-80"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Arguably the best rail operator in Europe. Excellent punctuality (92%+). Not in EU but in Schengen. Switzerland is expensive — warn users. SBB API exists but has signup friction.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "trenitalia",
+    "canonical_name": "Trenitalia",
+    "short_name": "Trenitalia",
+    "aliases": [
+      "Ferrovie dello Stato",
+      "FS",
+      "Italian State Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "IT",
+      "FR",
+      "CH",
+      "AT",
+      "DE"
+    ],
+    "hq_country": "IT",
+    "service_types": [
+      "HSR",
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.trenitalia.com",
+    "booking_notes": "Frecciarossa requires reservation. Super Economy from €19.90. InterCity Notte for night trains. Frecciarossa France competes on Paris-Milano.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "interrail_reservation_url": "https://www.trenitalia.com",
+    "approximate_prices_eur": {
+      "short_domestic": "€19.90-59",
+      "long_domestic": "€39.90-129",
+      "key_international": "€29-129"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Italy's state operator. Genuine HSR competition with Italo/NTV. ICN night trains to Sicily cross the Messina strait via train ferry. Regional tickets must be validated.",
+    "gauge": "1435 (standard)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_fs.jpg"
+  },
+  {
+    "operator_id": "renfe",
+    "canonical_name": "Renfe",
+    "short_name": "Renfe",
+    "aliases": [
+      "Red Nacional de los Ferrocarriles Españoles"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "ES",
+      "FR",
+      "PT"
+    ],
+    "hq_country": "ES",
+    "service_types": [
+      "HSR",
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.renfe.com",
+    "booking_notes": "Renfe website notoriously clunky — Trainline alternative. AVE Promo from €25. Ouigo España and Iryo compete on HSR corridors. Iberian broad gauge on conventional lines.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "interrail_reservation_url": "https://www.renfe.com",
+    "approximate_prices_eur": {
+      "short_domestic": "€25-120",
+      "long_domestic": "€25-120",
+      "key_international": "€35-180"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Spain's HSR network is 2nd largest worldwide. Iberian broad gauge on conventional lines. NO direct Spain-Portugal train link — discontinued. Renfe website UI problems well known.",
+    "gauge": "1668 (Iberian)"
+  },
+  {
+    "operator_id": "ns",
+    "canonical_name": "NS (Nederlandse Spoorwegen)",
+    "short_name": "NS",
+    "aliases": [
+      "Dutch Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "NL",
+      "BE",
+      "DE"
+    ],
+    "hq_country": "NL",
+    "service_types": [
+      "HSR",
+      "IC",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.ns.nl",
+    "booking_notes": "No reservation needed for domestic IC. Flat pricing — no advance discount. nsinternational.com for cross-border. NS API is excellent (free, real-time).",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.nsinternational.com",
+    "approximate_prices_eur": {
+      "short_domestic": "€9.40-15",
+      "long_domestic": "€23.80-40",
+      "key_international": "€29-69"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "One of the simplest train systems in Europe. Flat pricing — no advance booking needed. Amsterdam Centraal major international hub. NS API freely available.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "sncb_nmbs",
+    "canonical_name": "SNCB/NMBS",
+    "short_name": "SNCB",
+    "aliases": [
+      "Belgian Railways",
+      "Belgiantrain"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "BE",
+      "FR",
+      "NL",
+      "LU",
+      "DE"
+    ],
+    "hq_country": "BE",
+    "service_types": [
+      "IC",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.belgiantrain.be",
+    "booking_notes": "No domestic reservation needed. Weekend Ticket 50% off. Go Pass 1 for under-26 (€6.60/trip). Brussels has 3 main stations — check ticket.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.belgiantrain.be",
+    "approximate_prices_eur": {
+      "short_domestic": "€9.60-16.80",
+      "long_domestic": "€16.80-25",
+      "key_international": "€35-120"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Dense network for small country. Domestic travel is walk-up. Brussels is a major Eurostar and ICE hub. iRail API (irail.be) free for real-time data.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "pkp_intercity",
+    "canonical_name": "PKP Intercity",
+    "short_name": "PKP IC",
+    "aliases": [
+      "Polskie Koleje Państwowe",
+      "Polish State Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "PL",
+      "DE",
+      "CZ",
+      "AT",
+      "HU",
+      "UA"
+    ],
+    "hq_country": "PL",
+    "service_types": [
+      "HSR",
+      "IC",
+      "Night",
+      "International"
+    ],
+    "booking_url": "https://www.intercity.pl",
+    "booking_notes": "EIP Pendolino mandatory reservation. TLK budget option. Booking horizon only 30 days. DB Sparpreis Europa often cheaper for international routes.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "interrail_reservation_url": "https://www.intercity.pl",
+    "approximate_prices_eur": {
+      "short_domestic": "€12-33",
+      "long_domestic": "€15-45",
+      "key_international": "€19.90-69"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Massive investment ongoing. Rail Baltica under construction. Pendolino EIP excellent on Warszawa-Kraków-Katowice-Gdańsk. PKP PLK manages infrastructure separately.",
+    "gauge": "1435 (standard)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/04/logo_pkp.jpg"
+  },
+  {
+    "operator_id": "cd",
+    "canonical_name": "ČD (České dráhy)",
+    "short_name": "ČD",
+    "aliases": [
+      "Czech Railways",
+      "Ceske Drahy"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "CZ",
+      "DE",
+      "AT",
+      "SK",
+      "HU",
+      "PL"
+    ],
+    "hq_country": "CZ",
+    "service_types": [
+      "HSR",
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.cd.cz",
+    "booking_notes": "SuperCity Pendolino reservation required. RegioJet and Leo Express compete on price. Můj vlak app recommended.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.cd.cz",
+    "approximate_prices_eur": {
+      "short_domestic": "€7-15",
+      "long_domestic": "€10-25",
+      "key_international": "€14.90-49"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Dense rail network, one of the densest in Europe. Runs EuroNight sleeper and couchette services: Metropol (Praha-Budapest), the Praha-Budapest-Munich and Wien EuroNight that splits and joins coaches overnight at Bohumin, and the Praha-Przemysl night train (dep 22:16) toward the Ukraine border. RegioJet is a major private competitor; RailJet is a joint venture with OBB on Praha-Wien.",
+    "gauge": "1435 (standard)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_cd.jpg"
+  },
+  {
+    "operator_id": "zssk",
+    "canonical_name": "ZSSK (Železničná spoločnosť Slovensko)",
+    "short_name": "ZSSK",
+    "aliases": [
+      "Slovak Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "SK",
+      "CZ",
+      "AT",
+      "HU"
+    ],
+    "hq_country": "SK",
+    "service_types": [
+      "IC",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.zssk.sk",
+    "booking_notes": "IC Bratislava-Košice €16-22. Bratislava-Wien €11.50 one-way. RegioJet also runs international through Slovakia.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.zssk.sk",
+    "approximate_prices_eur": {
+      "short_domestic": "€5-12",
+      "long_domestic": "€16-22",
+      "key_international": "€11.50-20"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Small network. Bratislava-Wien is one of Europe's closest capital pairs (~60 km). High Tatras Electric Railway (TEŽ) is scenic narrow-gauge.",
+    "gauge": "1435 (standard)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_zssk.jpg"
+  },
+  {
+    "operator_id": "mav_start",
+    "canonical_name": "MÁV-START",
+    "short_name": "MÁV",
+    "aliases": [
+      "MAV",
+      "Hungarian State Railways",
+      "MAV Csoport"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "HU",
+      "AT",
+      "SK",
+      "RO",
+      "HR",
+      "RS",
+      "CZ",
+      "DE"
+    ],
+    "hq_country": "HU",
+    "service_types": [
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.mavcsoport.hu",
+    "booking_notes": "Budapest has 3 stations: Keleti (East), Nyugati (West), Déli (South). Domestic IC requires €3-5 reservation. RailJet joint with ÖBB.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "interrail_reservation_url": "https://www.mavcsoport.hu",
+    "approximate_prices_eur": {
+      "short_domestic": "€5-15",
+      "long_domestic": "€10-30",
+      "key_international": "€14.90-59"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Budapest is major Central European hub. MÁV app improved significantly. Budapest-București night train is classic route. Major investment in rolling stock renewal.",
+    "gauge": "1435 (standard)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_mav.jpg"
+  },
+  {
+    "operator_id": "sz",
+    "canonical_name": "SŽ (Slovenske železnice)",
+    "short_name": "SŽ",
+    "aliases": [
+      "Slovenian Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "SI",
+      "AT",
+      "HR",
+      "HU",
+      "IT",
+      "RS"
+    ],
+    "hq_country": "SI",
+    "service_types": [
+      "IC",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.slo-zeleznice.si",
+    "booking_notes": "ICS Ljubljana-Maribor from €8. International to Austria/Germany via ÖBB. Slovenia compact — rail is straightforward.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.slo-zeleznice.si",
+    "approximate_prices_eur": {
+      "short_domestic": "€8-15",
+      "long_domestic": "€3-10",
+      "key_international": "€12-59"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Small but strategic network. Ljubljana is a compact hub. ICS Pendolino tilting trains on Ljubljana-Maribor. Bled nearest station is Lesce-Bled.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "hz",
+    "canonical_name": "HŽ Putnički prijevoz",
+    "short_name": "HŽPP",
+    "aliases": [
+      "Croatian Railways",
+      "HZ Putnicki Prijevoz"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "HR",
+      "SI",
+      "HU",
+      "RS",
+      "AT"
+    ],
+    "hq_country": "HR",
+    "service_types": [
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.hzpp.hr",
+    "booking_notes": "Limited English website. ICN Zagreb-Split €15-25. International windows at Zagreb Glavni kolodvor.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.hzpp.hr",
+    "approximate_prices_eur": {
+      "short_domestic": "€8-15",
+      "long_domestic": "€15-25",
+      "key_international": "€12-25"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Network in poor condition but functional. Zagreb-Split scenic but slow. Dubrovnik has NO rail. ICN tilting trains are best rolling stock.",
+    "gauge": "1435 (standard)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_hzpp.jpg"
+  },
+  {
+    "operator_id": "cfr_calatori",
+    "canonical_name": "CFR Călători",
+    "short_name": "CFR",
+    "aliases": [
+      "CFR Calatori",
+      "Romanian Railways",
+      "Căile Ferate Române"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "RO",
+      "HU",
+      "BG",
+      "MD",
+      "AT",
+      "UA"
+    ],
+    "hq_country": "RO",
+    "service_types": [
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.cfrcalatori.ro",
+    "booking_notes": "IR (InterRegio) no reservation needed. Very cheap — €2-€8 local. Night trains to Budapest/Wien. Station ticket offices reliable.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.cfrcalatori.ro",
+    "approximate_prices_eur": {
+      "short_domestic": "€2-8",
+      "long_domestic": "€12-25",
+      "key_international": "€15-70"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Cheapest trains in the EU. București-Budapest/Wien night trains. București Nord is main hub. IR trains slow but absurdly cheap.",
+    "gauge": "1435 (standard)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_cfr.jpg"
+  },
+  {
+    "operator_id": "bdz",
+    "canonical_name": "BDZ (Balgarski Darzhavni Zheleznitsi)",
+    "short_name": "BDZ",
+    "aliases": [
+      "Bulgarian State Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "BG",
+      "RO",
+      "TR",
+      "RS",
+      "MK"
+    ],
+    "hq_country": "BG",
+    "service_types": [
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.bdz.bg",
+    "booking_notes": "Website unreliable — station purchase recommended. Very cheap: Sofia-Varna sleeper from ~€18. Sofia-Istanbul night train is classic.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.bdz.bg",
+    "approximate_prices_eur": {
+      "short_domestic": "€2-8",
+      "long_domestic": "€10-18",
+      "key_international": "€15-30"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Most underfunded railway in the EU. Trains very slow. Sofia-Plovdiv best domestic route. Sofia-Istanbul night train is classic experience.",
+    "gauge": "1435 (standard)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_bdz.jpg"
+  },
+  {
+    "operator_id": "hellenic_train",
+    "canonical_name": "Hellenic Train",
+    "short_name": "Hellenic Train",
+    "aliases": [
+      "TrainOSE",
+      "Greek Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "GR"
+    ],
+    "hq_country": "GR",
+    "service_types": [
+      "IC",
+      "Regional"
+    ],
+    "booking_url": "https://www.hellenictrain.gr",
+    "booking_notes": "Athens-Thessaloniki IC from €19. Tempi disaster 2023 impacted network. No reliable international connections. Limited domestic network.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "interrail_reservation_url": "https://www.hellenictrain.gr",
+    "approximate_prices_eur": {
+      "short_domestic": "€8-15",
+      "long_domestic": "€19-38",
+      "key_international": "N/A — no reliable international rail"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Smallest rail network in EU relative to size. Effectively rail-isolated from Europe. Tempi disaster (Feb 2023) recovery ongoing. Athens-Thessaloniki is the only meaningful long-distance route.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "cp",
+    "canonical_name": "CP (Comboios de Portugal)",
+    "short_name": "CP",
+    "aliases": [
+      "Portuguese Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "PT"
+    ],
+    "hq_country": "PT",
+    "service_types": [
+      "HSR",
+      "IC",
+      "Regional"
+    ],
+    "booking_url": "https://www.cp.pt",
+    "booking_notes": "Alfa Pendular Promo from €11 advance. Iberian broad gauge. NO direct train to Spain — international services discontinued 2020.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "interrail_reservation_url": "https://www.cp.pt",
+    "approximate_prices_eur": {
+      "short_domestic": "€11-43",
+      "long_domestic": "€10-28",
+      "key_international": "N/A — no international trains"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Rail-isolated from the rest of Europe. NO trains to Spain — Sud Expresso and Lusitânia discontinued 2020. Alfa Pendular excellent on Lisboa-Porto.",
+    "gauge": "1668 (Iberian)"
+  },
+  {
+    "operator_id": "sj",
+    "canonical_name": "SJ (Statens Järnvägar)",
+    "short_name": "SJ",
+    "aliases": [
+      "Swedish Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "SE",
+      "NO",
+      "DK",
+      "DE"
+    ],
+    "hq_country": "SE",
+    "service_types": [
+      "HSR",
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.sj.se",
+    "booking_notes": "Snabbtåg X2000 200 km/h. Nattåg to Lapland famous. Competition from Snälltåget and MTRX. SJ website excellent.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.sj.se",
+    "approximate_prices_eur": {
+      "short_domestic": "€17-60",
+      "long_domestic": "€26-100",
+      "key_international": "€12-60"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Swedish monopoly on most corridors. Nattåg Stockholm-Kiruna-Narvik is iconic. Genuine competition from private operators on some routes. Denmark connection via Øresund Bridge.",
+    "gauge": "1435 (standard)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_sj.jpg"
+  },
+  {
+    "operator_id": "vy",
+    "canonical_name": "Vy",
+    "short_name": "Vy",
+    "aliases": [
+      "NSB",
+      "Norges Statsbaner",
+      "Norwegian State Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "NO",
+      "SE"
+    ],
+    "hq_country": "NO",
+    "service_types": [
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.vy.no",
+    "booking_notes": "Minipris saver fares from 249 NOK (€22). Bergensbanen scenic Oslo-Bergen. Nattog night trains. Norway is expensive.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.vy.no",
+    "approximate_prices_eur": {
+      "short_domestic": "€22-50",
+      "long_domestic": "€50-80",
+      "key_international": "€30-60"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Rebranded from NSB in 2019. Bergensbanen is one of the world's most scenic railways. Nordlandsbanen crosses Arctic Circle. High prices reflect Norwegian costs.",
+    "gauge": "1435 (standard)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_vy.jpg"
+  },
+  {
+    "operator_id": "dsb",
+    "canonical_name": "DSB (Danske Statsbaner)",
+    "short_name": "DSB",
+    "aliases": [
+      "Danish State Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "DK",
+      "SE",
+      "DE"
+    ],
+    "hq_country": "DK",
+    "service_types": [
+      "IC",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.dsb.dk",
+    "booking_notes": "Orange advance tickets from 99 DKK (€13). Rejseplanen.dk national journey planner. Øresundståg to Sweden. København-Hamburg via ferry.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.dsb.dk",
+    "approximate_prices_eur": {
+      "short_domestic": "€13-54",
+      "long_domestic": "€13-54",
+      "key_international": "€12-40"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Orange advance tickets offer big savings. København-Hamburg train boarding a ferry is a novelty. Puttgarden-Rødby tunnel under construction. Øresund Bridge to Malmö seamless.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "vr",
+    "canonical_name": "VR Group",
+    "short_name": "VR",
+    "aliases": [
+      "Finnish Railways",
+      "Valtionrautatiet"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "FI"
+    ],
+    "hq_country": "FI",
+    "service_types": [
+      "HSR",
+      "IC",
+      "Night",
+      "Regional"
+    ],
+    "booking_url": "https://www.vr.fi",
+    "booking_notes": "Pendolino from €8.90 advance. Night trains to Lapland popular. VR has legal monopoly. All Russian connections suspended.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.vr.fi",
+    "approximate_prices_eur": {
+      "short_domestic": "€8.90-25",
+      "long_domestic": "€30-60",
+      "key_international": "N/A — rail-isolated"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Legal monopoly. Russian broad gauge (1,524mm) isolates from European standard gauge. Allegro and Tolstoi to Russia suspended. Night trains to Lapland excellent. Digitraffic API available.",
+    "gauge": "1524 (Finnish)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_vr.jpg"
+  },
+  {
+    "operator_id": "elron",
+    "canonical_name": "Elron",
+    "short_name": "Elron",
+    "aliases": [
+      "Estonian Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "EE"
+    ],
+    "hq_country": "EE",
+    "service_types": [
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.elron.ee",
+    "booking_notes": "Modern Stadler FLIRT trains. Walk-up pricing. Tallinn-Tartu from €8. No practical international rail. Rail Baltica under construction.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.elron.ee",
+    "approximate_prices_eur": {
+      "short_domestic": "€2-6",
+      "long_domestic": "€8-16",
+      "key_international": "N/A"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Modern trains but Russian broad gauge isolates from Europe. Rail Baltica under construction (~2028+). All Russian connections suspended.",
+    "gauge": "1520 (Russian broad)"
+  },
+  {
+    "operator_id": "pasazieru_vilciens",
+    "canonical_name": "Pasazieru Vilciens",
+    "short_name": "PV",
+    "aliases": [
+      "Latvian Railways",
+      "Latvijas Dzelzcels"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "LV"
+    ],
+    "hq_country": "LV",
+    "service_types": [
+      "Regional"
+    ],
+    "booking_url": "https://www.pv.lv",
+    "booking_notes": "Modern Stadler DMUs. Very affordable — €7-11 Riga-Daugavpils. No practical international rail. Rail Baltica coming.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.pv.lv",
+    "approximate_prices_eur": {
+      "short_domestic": "€1.50-2.50",
+      "long_domestic": "€7-11",
+      "key_international": "N/A"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Functional domestic trains but Russian broad gauge. Cross-border Baltic rail minimal. Rail Baltica under construction.",
+    "gauge": "1520 (Russian broad)"
+  },
+  {
+    "operator_id": "ltg_link",
+    "canonical_name": "LTG Link",
+    "short_name": "LTG Link",
+    "aliases": [
+      "Lithuanian Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "LT"
+    ],
+    "hq_country": "LT",
+    "service_types": [
+      "IC",
+      "Regional"
+    ],
+    "booking_url": "https://www.ltglink.lt",
+    "booking_notes": "Vilnius-Klaipeda from €15. Modern Pesa/Stadler trains. Kaunas-Warszawa standard-gauge partial. Rail Baltica under construction.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.ltglink.lt",
+    "approximate_prices_eur": {
+      "short_domestic": "€5-10",
+      "long_domestic": "€15-25",
+      "key_international": "N/A"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Decent domestic service. Rail Baltica will transform. Kaunas-Warszawa standard-gauge section partially operational.",
+    "gauge": "1520 (Russian broad)"
+  },
+  {
+    "operator_id": "cfl",
+    "canonical_name": "CFL (Chemins de Fer Luxembourgeois)",
+    "short_name": "CFL",
+    "aliases": [
+      "Luxembourg Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "LU",
+      "BE",
+      "FR",
+      "DE"
+    ],
+    "hq_country": "LU",
+    "service_types": [
+      "IC",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.cfl.lu",
+    "booking_notes": "ALL domestic public transport is FREE (since March 2020). Only country with free nationwide transport. Cross-border tickets from CFL/SNCF/DB.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.cfl.lu",
+    "approximate_prices_eur": {
+      "short_domestic": "FREE",
+      "long_domestic": "FREE",
+      "key_international": "€16-59"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "World's only country with free public transport for all. Simple, efficient, punctual. Great base for exploring the region.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "irish_rail",
+    "canonical_name": "Iarnród Éireann (Irish Rail)",
+    "short_name": "Irish Rail",
+    "aliases": [],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "IE"
+    ],
+    "hq_country": "IE",
+    "service_types": [
+      "IC",
+      "Regional"
+    ],
+    "booking_url": "https://www.irishrail.ie",
+    "booking_notes": "Dublin-Cork from €19.99 advance. Enterprise to Belfast. Small network. DART Dublin coastal. SailRail tickets available for UK.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.irishrail.ie",
+    "approximate_prices_eur": {
+      "short_domestic": "€2-5",
+      "long_domestic": "€19.99-45",
+      "key_international": "N/A — island nation"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Limited network — northwest and much of west coast unserved. Ireland is an island — SailRail (train+ferry) to UK. Dublin-Belfast crosses UK border no control.",
+    "gauge": "1600 (Irish)"
+  },
+  {
+    "operator_id": "national_rail_uk",
+    "canonical_name": "National Rail UK",
+    "short_name": "National Rail",
+    "aliases": [
+      "UK Rail",
+      "British Rail"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "GB"
+    ],
+    "hq_country": "GB",
+    "service_types": [
+      "HSR",
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.nationalrail.co.uk",
+    "booking_notes": "20+ franchised operators. Advance Singles from £30. Split-ticketing saves money. Eurostar to continent. Caledonian Sleeper to Scotland.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.nationalrail.co.uk",
+    "approximate_prices_eur": {
+      "short_domestic": "€27-210",
+      "long_domestic": "€35-200",
+      "key_international": "€45-210"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Complex privatized system with 20+ operators. Advance Singles offer best value. HS2 under construction. UK not in EU/Schengen — passport required.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "tcdd",
+    "canonical_name": "TCDD Taşımacılık",
+    "short_name": "TCDD",
+    "aliases": [
+      "Turkish State Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "TR",
+      "BG",
+      "GE"
+    ],
+    "hq_country": "TR",
+    "service_types": [
+      "HSR",
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.tcddtasimacilik.gov.tr",
+    "booking_notes": "YHT high-speed mandatory reservation. İstanbul-Ankara YHT from ~€8. Turistik Doğu Ekspresi books months ahead. İstanbul has Halkali and Pendik stations.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "interrail_reservation_url": "https://www.tcddtasimacilik.gov.tr",
+    "approximate_prices_eur": {
+      "short_domestic": "€2-8",
+      "long_domestic": "€8-20",
+      "key_international": "€20-40"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Not in EU — separate visa. YHT high-speed rail is excellent. Turistik Doğu Ekspresi (Ankara-Kars) is bucket-list scenic. İstanbul-Sofia night train only practical rail link to Europe.",
+    "gauge": "1435 (standard)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_tcdd.jpg"
+  },
+  {
+    "operator_id": "ukrzaliznytsia",
+    "canonical_name": "Ukrzaliznytsia (UZ)",
+    "short_name": "Ukrzaliznytsia",
+    "aliases": [
+      "Ukrainian Railways",
+      "UZ"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "UA",
+      "PL",
+      "SK",
+      "HU",
+      "MD"
+    ],
+    "hq_country": "UA",
+    "service_types": [
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.uz.gov.ua",
+    "booking_notes": "IC+ from €9. Night train sleeper from €13. Kyiv-Warszawa night train operating. ALL Russia/Belarus connections suspended. Gauge change at EU border.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.uz.gov.ua",
+    "approximate_prices_eur": {
+      "short_domestic": "€9-18",
+      "long_domestic": "€10-25",
+      "key_international": "€25-60"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Massive network despite active war. Trains remarkably operational. Russian broad gauge. Western Ukraine (Lviv, Uzhhorod) functioning near-normally. ALL eastern/southern routes risk war disruption. UZ is symbol of national resilience.",
+    "gauge": "1520 (Russian broad)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_uz.jpg"
+  },
+  {
+    "operator_id": "srbija_voz",
+    "canonical_name": "Srbija Voz",
+    "short_name": "Srbija Voz",
+    "aliases": [
+      "Serbian Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "RS",
+      "ME",
+      "BG",
+      "HR",
+      "HU",
+      "MK"
+    ],
+    "hq_country": "RS",
+    "service_types": [
+      "HSR",
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.srbijavoz.rs",
+    "booking_notes": "Soko Beograd-Novi Sad from €4.50. Beograd-Bar night train legendary. Station purchase normal. Beograd Centar (Prokop) is main station now.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.srbijavoz.rs",
+    "approximate_prices_eur": {
+      "short_domestic": "€1-5",
+      "long_domestic": "€4.50-10",
+      "key_international": "€20-45"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Soko high-speed (Chinese CRRC, 200 km/h) is new. Beograd-Bar railway: 254 tunnels, 435 bridges — spectacular. Not in EU. Beograd Centar replaced old Glavna station.",
+    "gauge": "1435 (standard)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_zs.jpg"
+  },
+  {
+    "operator_id": "zfbh",
+    "canonical_name": "ŽFBH (Željeznice Federacije BiH)",
+    "short_name": "ŽFBH",
+    "aliases": [
+      "Bosnian Railways Federation"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "BA",
+      "HR"
+    ],
+    "hq_country": "BA",
+    "service_types": [
+      "IC",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "http://www.zfbh.ba",
+    "booking_notes": "Station purchase only. Sarajevo-Mostar ~€5. International limited. Two operators (Federation and RS) — complicated.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "http://www.zfbh.ba",
+    "approximate_prices_eur": {
+      "short_domestic": "€5",
+      "long_domestic": "€8-12",
+      "key_international": "€15-25"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Post-war recovery. Sarajevo-Mostar through Neretva canyon is spectacular. Two separate operators for Federation and Republika Srpska. Buses usually faster.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "zrs",
+    "canonical_name": "ŽRS (Željeznice Republike Srpske)",
+    "short_name": "ŽRS",
+    "aliases": [
+      "RS Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "BA"
+    ],
+    "hq_country": "BA",
+    "service_types": [
+      "Regional"
+    ],
+    "booking_url": "https://www.zrs-rs.com",
+    "booking_notes": "Station purchase only. Very limited service in RS entity.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.zrs-rs.com",
+    "approximate_prices_eur": {
+      "short_domestic": "€3-8",
+      "long_domestic": "€8-12",
+      "key_international": "N/A"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Republika Srpska entity operator. Separate from Federation ŽFBH. Minimal service. Bosnia's rail split is a legacy of the Dayton Agreement.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "zpcg",
+    "canonical_name": "ŽPCG (Željeznička prevoz Crne Gore)",
+    "short_name": "ŽPCG",
+    "aliases": [
+      "Montenegrin Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "ME",
+      "RS"
+    ],
+    "hq_country": "ME",
+    "service_types": [
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.zpcg.me",
+    "booking_notes": "Station purchase. Bar-Beograd night train is the star route. Very cheap domestic. Only ~250 km of rail in Montenegro.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.zpcg.me",
+    "approximate_prices_eur": {
+      "short_domestic": "€3-5",
+      "long_domestic": "€2-3",
+      "key_international": "€30-45"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Tiny network. Bar-Beograd railway is legendary — 254 tunnels, 435 bridges through Dinaric Alps. Podgorica-Shkodër freight only.",
+    "gauge": "1435 (standard)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_zpcg.jpg",
+    "fare_conditions": "CITY STAR: 1st passenger pays the full fare, 2 to 4 others receive a 20% discount."
+  },
+  {
+    "operator_id": "mz",
+    "canonical_name": "MŽ (Makedonski Železnici)",
+    "short_name": "MŽ",
+    "aliases": [
+      "Macedonian Railways",
+      "North Macedonia Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "MK"
+    ],
+    "hq_country": "MK",
+    "service_types": [
+      "Regional",
+      "International"
+    ],
+    "booking_url": "http://www.mzi.mk",
+    "booking_notes": "Station purchase only. Very cheap (€3-10). Buses are faster and more frequent for most routes. International links unreliable.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "http://www.mzi.mk",
+    "approximate_prices_eur": {
+      "short_domestic": "€1-4",
+      "long_domestic": "€5-10",
+      "key_international": "€10-15"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Minimal network. Rolling stock very old. International services unreliable. Buses are primary transport. Skopje-Bitola scenic but slow.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "hsh",
+    "canonical_name": "HSH (Hekurudha Shqiptare)",
+    "short_name": "HSH",
+    "aliases": [
+      "Albanian Railways"
+    ],
+    "type": "state",
+    "status": "defunct",
+    "countries": [
+      "AL"
+    ],
+    "hq_country": "AL",
+    "service_types": [],
+    "booking_url": "https://www.hekurudha.al",
+    "booking_notes": "Albania's rail network is effectively defunct. No practical passenger service.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "N/A",
+      "long_domestic": "N/A",
+      "key_international": "N/A"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "EFFECTIVELY DEFUNCT. Tirana is the only European capital without any rail service. Buses and furgons (shared minibuses) are the only transport. No international rail.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "trainkos",
+    "canonical_name": "Trainkos",
+    "short_name": "Trainkos",
+    "aliases": [
+      "Kosovo Railways"
+    ],
+    "type": "state",
+    "status": "suspended",
+    "countries": [
+      "XK"
+    ],
+    "hq_country": "XK",
+    "service_types": [
+      "Regional"
+    ],
+    "booking_url": "http://www.trainkos.com",
+    "booking_notes": "Minimal service. Pristina-Pejë may operate. Station purchase only.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "€1-5",
+      "long_domestic": "€1-5",
+      "key_international": "N/A"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Very limited passenger service. No practical international rail. Pristina-Skopje freight only. Buses are primary transport.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "cfm",
+    "canonical_name": "CFM (Calea Ferată din Moldova)",
+    "short_name": "CFM",
+    "aliases": [
+      "Moldovan Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "MD",
+      "RO",
+      "UA"
+    ],
+    "hq_country": "MD",
+    "service_types": [
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "http://www.railway.md",
+    "booking_notes": "Station purchase. Chișinău-București night train ~€15-35. Gauge change at Romanian border. Broad gauge.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "http://www.railway.md",
+    "approximate_prices_eur": {
+      "short_domestic": "€1-4",
+      "long_domestic": "€3-10",
+      "key_international": "€15-35"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Russian broad gauge. Chișinău-București night train via Transnistria. One of Europe's poorest rail networks. Not in EU.",
+    "gauge": "1520 (Russian broad)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_cfm.jpg"
+  },
+  {
+    "operator_id": "bch",
+    "canonical_name": "BCh (Belaruskaya Chyhunka)",
+    "short_name": "BCh",
+    "aliases": [
+      "Belarusian Railway"
+    ],
+    "type": "state",
+    "status": "suspended_eu",
+    "countries": [
+      "BY"
+    ],
+    "hq_country": "BY",
+    "service_types": [],
+    "booking_url": "https://www.rw.by",
+    "booking_notes": "EU TRAVEL WARNING. ALL international connections to EU suspended. Do not recommend travel.",
+    "interrail_accepted": false,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "N/A",
+      "long_domestic": "N/A",
+      "key_international": "N/A"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "SUSPENDED_EU. EU sanctions in effect. Complicit in Russian war. All EU connections suspended. Do not route any travel through Belarus.",
+    "gauge": "1520 (Russian broad)"
+  },
+  {
+    "operator_id": "rzd",
+    "canonical_name": "RZD (Rossiyskiye Zheleznye Dorogi)",
+    "short_name": "RZD",
+    "aliases": [
+      "Russian Railways"
+    ],
+    "type": "state",
+    "status": "suspended_eu",
+    "countries": [
+      "RU"
+    ],
+    "hq_country": "RU",
+    "service_types": [],
+    "booking_url": "https://pass.rzd.ru",
+    "booking_notes": "EU SANCTIONS. ALL connections to EU suspended. RZD is a sanctioned entity. Do not recommend travel.",
+    "interrail_accepted": false,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "N/A",
+      "long_domestic": "N/A",
+      "key_international": "N/A"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "SUSPENDED_EU — EU sanctions. ALL EU connections suspended. Russian invasion of Ukraine. RZD is sanctioned. Never recommend travel to Russia.",
+    "gauge": "1520 (Russian broad)"
+  },
+  {
+    "operator_id": "georgian_railway",
+    "canonical_name": "Georgian Railway",
+    "short_name": "GR",
+    "aliases": [
+      "Sakartvelos Rkinigza"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "GE",
+      "AZ",
+      "TR"
+    ],
+    "hq_country": "GE",
+    "service_types": [
+      "IC",
+      "Night",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.railway.ge",
+    "booking_notes": "Station purchase. Tbilisi-Batumi ~€7-14. Modern Stadler trains on Black Sea line. BTK railway to Turkey.",
+    "interrail_accepted": false,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "€2-4",
+      "long_domestic": "€7-14",
+      "key_international": "€20-40"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Not in Interrail scheme. Russian broad gauge. Tbilisi-Batumi is the best route. Tbilisi-Yerevan night train. BTK railway to Turkey.",
+    "gauge": "1520 (Russian broad)"
+  },
+  {
+    "operator_id": "scr_armenia",
+    "canonical_name": "SCR (South Caucasus Railway) Armenia",
+    "short_name": "SCR Armenia",
+    "aliases": [
+      "Armenian Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "AM",
+      "GE"
+    ],
+    "hq_country": "AM",
+    "service_types": [
+      "IC",
+      "Night",
+      "Regional"
+    ],
+    "booking_url": "https://www.ukzhd.am",
+    "booking_notes": "Russian Railways subsidiary. Station purchase. Yerevan-Tbilisi night train. Turkey and Azerbaijan borders closed.",
+    "interrail_accepted": false,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "€1-3",
+      "long_domestic": "€4-6",
+      "key_international": "€20-35"
+    },
+    "parent_company": "RZD",
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "RZD subsidiary — sanctions concerns. Geographically isolated. Turkey and Azerbaijan borders closed. Yerevan-Tbilisi night train is the only international exit.",
+    "gauge": "1520 (Russian broad)"
+  },
+  {
+    "operator_id": "ady",
+    "canonical_name": "ADY (Azərbaycan Dəmir Yolları)",
+    "short_name": "ADY",
+    "aliases": [
+      "Azerbaijan Railways"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "AZ",
+      "GE"
+    ],
+    "hq_country": "AZ",
+    "service_types": [
+      "IC",
+      "Night",
+      "Regional"
+    ],
+    "booking_url": "https://www.ady.az",
+    "booking_notes": "Station purchase. Baku-Ganja modern KISS trains. Baku-Tbilisi night train. Armenia border closed.",
+    "interrail_accepted": false,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "€0.50-1.50",
+      "long_domestic": "€5-10",
+      "key_international": "€20-40"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Not in Interrail. Baku-Tbilisi night train. Armenia border closed. Baku suburban modern Stadler KISS. BTK railway to Georgia and Turkey.",
+    "gauge": "1520 (Russian broad)"
+  },
+  {
+    "operator_id": "italo",
+    "canonical_name": "Italo (NTV SpA / MSC)",
+    "short_name": "Italo",
+    "aliases": [
+      "NTV",
+      ".Italo",
+      "Nuovo Trasporto Viaggiatori"
+    ],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "IT"
+    ],
+    "hq_country": "IT",
+    "service_types": [
+      "HSR"
+    ],
+    "booking_url": "https://www.italotreno.it",
+    "booking_notes": "Low Cost from €14.90 on sale. 300 km/h AGV. Competing directly with Trenitalia Frecciarossa. NOT covered by Interrail.",
+    "interrail_accepted": false,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "€14.90-59",
+      "long_domestic": "€29.90-99",
+      "key_international": "N/A — domestic only"
+    },
+    "parent_company": "MSC Group",
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "MSC Group acquired majority stake 2023. Formerly NTV brand (now 'Italo' primary). Competes with Trenitalia on HSR corridors. NOT accepted by Interrail.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "ouigo",
+    "canonical_name": "Ouigo France",
+    "short_name": "Ouigo",
+    "aliases": [
+      "Ouigo TGV",
+      "Ouigo France"
+    ],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "FR",
+      "ES"
+    ],
+    "hq_country": "FR",
+    "service_types": [
+      "HSR"
+    ],
+    "booking_url": "https://www.ouigo.com",
+    "booking_notes": "SNCF low-cost subsidiary. From €10 adults + €5 children. Limited luggage. 30 min check-in before departure. Separate from TGV inOui.",
+    "interrail_accepted": false,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "€10-49",
+      "long_domestic": "€19-79",
+      "key_international": "€29-59"
+    },
+    "parent_company": "SNCF",
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "SNCF low-cost subsidiary. Some Ouigo Grande Vitesse trains serve international routes (France-Spain). Mandatory check-in 30 min before departure. No Interrail acceptance.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "frecciarossa_france",
+    "canonical_name": "Frecciarossa France",
+    "short_name": "Frecciarossa FR",
+    "aliases": [
+      "Trenitalia France"
+    ],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "FR",
+      "IT"
+    ],
+    "hq_country": "IT",
+    "service_types": [
+      "HSR"
+    ],
+    "booking_url": "https://www.trenitalia.com",
+    "booking_notes": "Trenitalia subsidiary competing with SNCF on Paris-Milano. Frecciarossa 1000 trains.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "interrail_reservation_url": "https://www.trenitalia.com",
+    "approximate_prices_eur": {
+      "short_domestic": "€29-79",
+      "long_domestic": "€39-129",
+      "key_international": "€39-129"
+    },
+    "parent_company": "Trenitalia",
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Trenitalia's French operation. Competes with SNCF TGV on Paris-Milano. Interrail accepted.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "iryo",
+    "canonical_name": "Iryo",
+    "short_name": "Iryo",
+    "aliases": [],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "ES"
+    ],
+    "hq_country": "ES",
+    "service_types": [
+      "HSR"
+    ],
+    "booking_url": "https://www.iryo.eu",
+    "booking_notes": "From €18 advance. 300 km/h ETR 1000. Madrid-Barcelona, Madrid-Valencia, etc. Interrail accepted with reservation.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "interrail_reservation_url": "https://www.iryo.eu",
+    "approximate_prices_eur": {
+      "short_domestic": "€18-60",
+      "long_domestic": "€18-60",
+      "key_international": "N/A"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Private Spanish HSR operator. Trenitalia/Globalvia/Air Nostrum joint venture. Interrail accepted (with reservation). Competes with Renfe AVE and Ouigo España.",
+    "gauge": "1668 (Iberian)"
+  },
+  {
+    "operator_id": "ouigo_espana",
+    "canonical_name": "Ouigo España",
+    "short_name": "Ouigo ES",
+    "aliases": [],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "ES"
+    ],
+    "hq_country": "FR",
+    "service_types": [
+      "HSR"
+    ],
+    "booking_url": "https://www.ouigo.com/es",
+    "booking_notes": "SNCF low-cost Spanish subsidiary. From €9. Madrid-Barcelona, Madrid-Valencia. Does NOT accept Interrail.",
+    "interrail_accepted": false,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "€9-49",
+      "long_domestic": "€9-49",
+      "key_international": "N/A"
+    },
+    "parent_company": "SNCF",
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "SNCF budget HSR brand in Spain. Competes aggressively on price with AVE and Iryo. Does NOT accept Interrail.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "regiojet",
+    "canonical_name": "RegioJet",
+    "short_name": "RegioJet",
+    "aliases": [
+      "Student Agency",
+      "RJ"
+    ],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "CZ",
+      "SK",
+      "AT",
+      "HU",
+      "DE",
+      "PL",
+      "HR"
+    ],
+    "hq_country": "CZ",
+    "service_types": [
+      "IC",
+      "International"
+    ],
+    "booking_url": "https://www.regiojet.com",
+    "booking_notes": "Praha-Brno from €7, includes free coffee/water/wifi. Excellent service. Competes with ČD. Does NOT accept Interrail.",
+    "interrail_accepted": false,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "€7-15",
+      "long_domestic": "€10-25",
+      "key_international": "€14.90-49"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Czech private operator. Excellent service on Central European corridors. Free drinks/wifi in all classes. Does NOT accept Interrail — warn passholders.",
+    "gauge": "1435 (standard)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_rj.jpg"
+  },
+  {
+    "operator_id": "leo_express",
+    "canonical_name": "Leo Express",
+    "short_name": "Leo Express",
+    "aliases": [],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "CZ",
+      "SK",
+      "PL"
+    ],
+    "hq_country": "CZ",
+    "service_types": [
+      "IC",
+      "International"
+    ],
+    "booking_url": "https://www.leoexpress.com",
+    "booking_notes": "Very cheap. Praha-Kraków, Praha-Bratislava. Black trains, basic but functional. Does NOT accept Interrail.",
+    "interrail_accepted": false,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "€5-15",
+      "long_domestic": "€10-20",
+      "key_international": "€10-25"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Czech private operator. Budget alternative to ČD and RegioJet. Does NOT accept Interrail.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "flixtrain",
+    "canonical_name": "FlixTrain",
+    "short_name": "FlixTrain",
+    "aliases": [
+      "Flixtrain"
+    ],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "DE",
+      "SE"
+    ],
+    "hq_country": "DE",
+    "service_types": [
+      "IC"
+    ],
+    "booking_url": "https://www.flixtrain.com",
+    "booking_notes": "From €4.99. Limited routes: Berlin-Hamburg, Berlin-Köln, Hamburg-Stuttgart, Berlin-Frankfurt. Budget green trains.",
+    "interrail_accepted": false,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "€4.99-19.99",
+      "long_domestic": "€9.99-29.99",
+      "key_international": "N/A"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "FlixMobility's train brand (sister to FlixBus). Budget alternative on key German corridors. Very cheap. Does NOT accept Interrail.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "westbahn",
+    "canonical_name": "WESTbahn",
+    "short_name": "WESTbahn",
+    "aliases": [],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "AT",
+      "DE"
+    ],
+    "hq_country": "AT",
+    "service_types": [
+      "IC",
+      "International"
+    ],
+    "booking_url": "https://www.westbahn.at",
+    "booking_notes": "Wien-Salzburg-München every 2h. Fixed moderate prices. No advance discounts. Accepts Interrail. Clean modern trains.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.westbahn.at",
+    "approximate_prices_eur": {
+      "short_domestic": "€15-35",
+      "long_domestic": "€25-50",
+      "key_international": "€25-54.90"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Austrian private operator. Competes with ÖBB on Wien-Salzburg. Interrail accepted. Fixed pricing — no advance discounts.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "snalltaget",
+    "canonical_name": "Snälltåget",
+    "short_name": "Snälltåget",
+    "aliases": [],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "SE",
+      "DK",
+      "DE"
+    ],
+    "hq_country": "SE",
+    "service_types": [
+      "Night",
+      "International"
+    ],
+    "booking_url": "https://www.snalltaget.se",
+    "booking_notes": "Berlin-Malmö-Stockholm night train seasonal (April-Sept + Christmas). Domestic Malmö-Stockholm night train. Book 3-6 months ahead for summer.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "interrail_reservation_url": "https://www.snalltaget.se",
+    "approximate_prices_eur": {
+      "short_domestic": "€26-79",
+      "long_domestic": "€44-79",
+      "key_international": "€44-115"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Swedish private operator. Only direct Germany-Sweden night train (seasonal). Interrail accepted with supplement. Goes via Øresund Bridge and Rødby-Puttgarden ferry.",
+    "gauge": "1435 (standard)",
+    "runs_night_trains": true,
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_st.jpg"
+  },
+  {
+    "operator_id": "mtr_express",
+    "canonical_name": "MTR Express",
+    "short_name": "MTRX",
+    "aliases": [
+      "MTRX"
+    ],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "SE"
+    ],
+    "hq_country": "SE",
+    "service_types": [
+      "HSR"
+    ],
+    "booking_url": "https://www.mtrx.travel",
+    "booking_notes": "Stockholm-Göteborg competing with SJ. Modern Stadler FLIRT trains. From 195 SEK. Does NOT accept Interrail.",
+    "interrail_accepted": false,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "€17-50",
+      "long_domestic": "€17-50",
+      "key_international": "N/A"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Hong Kong MTR-owned Swedish operator. Stockholm-Göteborg corridor only. Does NOT accept Interrail.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "govolta",
+    "canonical_name": "GoVolta",
+    "short_name": "GoVolta",
+    "aliases": [],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "NL",
+      "DE",
+      "CZ"
+    ],
+    "hq_country": "NL",
+    "service_types": [
+      "IC",
+      "International"
+    ],
+    "booking_url": "https://www.govolta.eu",
+    "booking_notes": "New low-cost open-access operator. Launched March 2026. Amsterdam-Berlin-Praha corridor. Very new — limited schedule.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "interrail_reservation_url": "https://www.govolta.eu",
+    "approximate_prices_eur": {
+      "short_domestic": "N/A",
+      "long_domestic": "N/A",
+      "key_international": "€10-40"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Newest entrant — launched March 2026. Amsterdam-Berlin-Praha low-cost corridor. Very new — check website for current routes and schedules. Interrail accepted with mandatory reservation.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "lumo",
+    "canonical_name": "Lumo",
+    "short_name": "Lumo",
+    "aliases": [],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "GB"
+    ],
+    "hq_country": "GB",
+    "service_types": [
+      "HSR",
+      "IC"
+    ],
+    "booking_url": "https://www.lumo.co.uk",
+    "booking_notes": "London-Edinburgh from £19.90. 100% electric. East Coast Main Line open-access. Competing with LNER.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.lumo.co.uk",
+    "approximate_prices_eur": {
+      "short_domestic": "€23-70",
+      "long_domestic": "€23-70",
+      "key_international": "N/A"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "UK open-access operator. London-Edinburgh only. 100% electric fleet. Competing with LNER. Interrail accepted.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "hull_trains",
+    "canonical_name": "Hull Trains",
+    "short_name": "Hull Trains",
+    "aliases": [],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "GB"
+    ],
+    "hq_country": "GB",
+    "service_types": [
+      "IC"
+    ],
+    "booking_url": "https://www.hulltrains.co.uk",
+    "booking_notes": "London-Hull direct. Open-access operator.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.hulltrains.co.uk",
+    "approximate_prices_eur": {
+      "short_domestic": "€15-80",
+      "long_domestic": "€15-80",
+      "key_international": "N/A"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "UK open-access operator. London-Hull direct service.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "grand_central",
+    "canonical_name": "Grand Central",
+    "short_name": "Grand Central",
+    "aliases": [],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "GB"
+    ],
+    "hq_country": "GB",
+    "service_types": [
+      "IC"
+    ],
+    "booking_url": "https://www.grandcentralrail.com",
+    "booking_notes": "London-Sunderland, London-Bradford. Open-access operator.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.grandcentralrail.com",
+    "approximate_prices_eur": {
+      "short_domestic": "€15-80",
+      "long_domestic": "€15-80",
+      "key_international": "N/A"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "UK open-access operator. North-east and Yorkshire routes.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "heathrow_express",
+    "canonical_name": "Heathrow Express",
+    "short_name": "Heathrow Express",
+    "aliases": [],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "GB"
+    ],
+    "hq_country": "GB",
+    "service_types": [
+      "Regional"
+    ],
+    "booking_url": "https://www.heathrowexpress.com",
+    "booking_notes": "London Paddington-Heathrow Airport 15 min. Expensive. Elizabeth Line cheaper alternative.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.heathrowexpress.com",
+    "approximate_prices_eur": {
+      "short_domestic": "€25-30",
+      "long_domestic": "€25-30",
+      "key_international": "N/A"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "London airport express. Expensive — Elizabeth Line is cheaper. Interrail accepted.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "eurostar",
+    "canonical_name": "Eurostar Group",
+    "short_name": "Eurostar",
+    "aliases": [
+      "Eurostar International",
+      "Eurostar Group"
+    ],
+    "type": "joint",
+    "status": "active",
+    "countries": [
+      "GB",
+      "FR",
+      "BE",
+      "NL",
+      "DE"
+    ],
+    "hq_country": "FR",
+    "service_types": [
+      "HSR",
+      "International"
+    ],
+    "booking_url": "https://www.eurostar.com",
+    "booking_notes": "London-Paris/Bruxelles/Amsterdam. Passport control at station. From £39 one-way. Interrail passholders: €30 seat reservation, limited allocation. Absorbed Thalys Oct 2023.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "interrail_reservation_url": "https://www.eurostar.com",
+    "approximate_prices_eur": {
+      "short_domestic": "N/A",
+      "long_domestic": "N/A",
+      "key_international": "€45-210"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Absorbed Thalys in Oct 2023. Now operates ALL high-speed services through the Channel Tunnel AND former Thalys routes (Paris-Bruxelles-Amsterdam-Köln). Interrail passholders get limited seats at €30 supplement. Passport control at station.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "railjet_oebb_db",
+    "canonical_name": "RailJet (ÖBB/DB joint)",
+    "short_name": "RailJet",
+    "aliases": [
+      "railjet"
+    ],
+    "type": "joint",
+    "status": "active",
+    "countries": [
+      "AT",
+      "DE",
+      "CH",
+      "HU",
+      "CZ",
+      "IT"
+    ],
+    "hq_country": "AT",
+    "service_types": [
+      "HSR",
+      "International"
+    ],
+    "booking_url": "https://www.oebb.at",
+    "booking_notes": "ÖBB's premium train brand. 230 km/h. Wien-Salzburg-München, Wien-Budapest, Wien-Praha, Wien-Venezia. Book on oebb.at.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "https://www.oebb.at",
+    "approximate_prices_eur": {
+      "short_domestic": "€9.90-49",
+      "long_domestic": "€14.90-60",
+      "key_international": "€14.90-69"
+    },
+    "parent_company": "ÖBB",
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "RailJet is the ÖBB-DB joint premium brand (not a separate company). Excellent quality — restaurant car, wifi. Operates on key Central European corridors.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "eurostar_group_holding",
+    "canonical_name": "Eurostar Group (holding)",
+    "short_name": "Eurostar Group",
+    "aliases": [
+      "Eurostar-Thalys merger"
+    ],
+    "type": "joint",
+    "status": "active",
+    "countries": [
+      "GB",
+      "FR",
+      "BE",
+      "NL",
+      "DE"
+    ],
+    "hq_country": "BE",
+    "service_types": [
+      "HSR",
+      "International"
+    ],
+    "booking_url": "https://www.eurostar.com",
+    "booking_notes": "The holding company. All trains (ex-Thalys and original Eurostar) now branded Eurostar. Red trains = former Thalys.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "interrail_reservation_url": "https://www.eurostar.com",
+    "approximate_prices_eur": {
+      "short_domestic": "N/A",
+      "long_domestic": "N/A",
+      "key_international": "€45-210"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "The merged holding entity. All former Thalys and Eurostar services now under one brand. 'Eurostar Red' = former Thalys services.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "european_sleeper",
+    "canonical_name": "European Sleeper",
+    "short_name": "European Sleeper",
+    "aliases": [],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "BE",
+      "NL",
+      "DE",
+      "CZ"
+    ],
+    "hq_country": "NL",
+    "service_types": [
+      "Night",
+      "International"
+    ],
+    "booking_url": "https://www.europeansleeper.eu",
+    "booking_notes": "Bruxelles-Amsterdam-Berlin-Dresden-Praha night train (3x/week). Launched 2023. From €29 seat. Newest night train operator — independent startup.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "interrail_reservation_url": "https://www.europeansleeper.eu",
+    "approximate_prices_eur": {
+      "short_domestic": "N/A",
+      "long_domestic": "N/A",
+      "key_international": "€29-139"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Independent startup. Launched 2023. Only 3x/week — check schedule. Sleeper Deluxe compartments available. Expanding to Prague, planning future southern routes.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "thalys",
+    "canonical_name": "Thalys (MERGED — now Eurostar)",
+    "short_name": "Thalys",
+    "aliases": [
+      "Thalys",
+      "Thalys International"
+    ],
+    "type": "merged",
+    "status": "defunct",
+    "countries": [
+      "FR",
+      "BE",
+      "NL",
+      "DE"
+    ],
+    "hq_country": "BE",
+    "service_types": [
+      "HSR",
+      "International"
+    ],
+    "booking_url": "https://www.eurostar.com",
+    "booking_notes": "Thalys brand was absorbed into Eurostar in October 2023. Now book at eurostar.com. The red trains still exist but are branded Eurostar.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "interrail_reservation_url": "https://www.eurostar.com",
+    "approximate_prices_eur": {
+      "short_domestic": "N/A",
+      "long_domestic": "N/A",
+      "key_international": "N/A — see Eurostar"
+    },
+    "parent_company": "Eurostar Group",
+    "absorbed_by": "eurostar",
+    "absorbed_date": "2023-09",
+    "notes": "ABSORBED by Eurostar October 2023. Do NOT recommend 'Thalys' — always refer to 'Eurostar (formerly Thalys)'. The red Thalys trains are now branded as Eurostar.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "ntv_legacy",
+    "canonical_name": "NTV (LEGACY — now Italo)",
+    "short_name": "NTV",
+    "aliases": [
+      "NTV",
+      "Nuovo Trasporto Viaggiatori"
+    ],
+    "type": "merged",
+    "status": "defunct",
+    "countries": [
+      "IT"
+    ],
+    "hq_country": "IT",
+    "service_types": [
+      "HSR"
+    ],
+    "booking_url": "https://www.italotreno.it",
+    "booking_notes": "NTV brand is legacy. All trains now marketed as Italo. MSC Group acquired majority stake 2023. Book at italotreno.it.",
+    "interrail_accepted": false,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "€14.90-59",
+      "long_domestic": "€29.90-99",
+      "key_international": "N/A"
+    },
+    "parent_company": "MSC Group",
+    "absorbed_by": "italo",
+    "absorbed_date": "2023-04",
+    "notes": "NTV brand retired. MSC acquisition completed April 2023. Brand name now 'Italo'. Use 'italo' as the operator_id for live information. This entry exists solely for alias resolution.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "hkx",
+    "canonical_name": "Hamburg-Köln-Express (HKX — absorbed by FlixTrain)",
+    "short_name": "HKX",
+    "aliases": [
+      "Hamburg-Köln-Express",
+      "HKX"
+    ],
+    "type": "merged",
+    "status": "defunct",
+    "countries": [
+      "DE"
+    ],
+    "hq_country": "DE",
+    "service_types": [
+      "IC"
+    ],
+    "booking_url": "https://www.flixtrain.com",
+    "booking_notes": "HKX was acquired by FlixMobility and folded into FlixTrain.",
+    "interrail_accepted": false,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "N/A",
+      "long_domestic": "N/A",
+      "key_international": "N/A"
+    },
+    "parent_company": "FlixMobility",
+    "absorbed_by": "flixtrain",
+    "absorbed_date": "2018-03",
+    "notes": "Defunct. Absorbed by FlixTrain 2018. Legacy entry for alias resolution.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "locomore",
+    "canonical_name": "Locomore (DEFUNCT — absorbed by Leo Express)",
+    "short_name": "Locomore",
+    "aliases": [
+      "Locomore"
+    ],
+    "type": "merged",
+    "status": "defunct",
+    "countries": [
+      "DE"
+    ],
+    "hq_country": "DE",
+    "service_types": [
+      "IC"
+    ],
+    "booking_url": "https://www.leoexpress.com",
+    "booking_notes": "Locomore was crowdfunded startup. Absorbed by Leo Express 2017. No longer operates.",
+    "interrail_accepted": false,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "N/A",
+      "long_domestic": "N/A",
+      "key_international": "N/A"
+    },
+    "parent_company": "Leo Express",
+    "absorbed_by": "leo_express",
+    "absorbed_date": "2017",
+    "notes": "Crowdfunded German startup. Failed financially. Absorbed by Leo Express.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "arriva_crossborder",
+    "canonical_name": "Arriva Cross-Border",
+    "short_name": "Arriva",
+    "aliases": [
+      "Arriva international"
+    ],
+    "type": "private",
+    "status": "suspended",
+    "countries": [
+      "NL",
+      "DE",
+      "BE",
+      "CZ",
+      "PL",
+      "SK"
+    ],
+    "hq_country": "NL",
+    "service_types": [
+      "IC",
+      "Regional",
+      "International"
+    ],
+    "booking_url": "https://www.arriva.com",
+    "booking_notes": "Arriva cross-border services have been largely suspended or absorbed by other operators. Check current status for specific routes.",
+    "interrail_accepted": true,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "N/A",
+      "long_domestic": "N/A",
+      "key_international": "N/A"
+    },
+    "parent_company": "Deutsche Bahn",
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "DB subsidiary. Cross-border services largely suspended or replaced by other operators.",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "operator_id": "nox_mobility",
+    "canonical_name": "NOX Mobility (Announced)",
+    "short_name": "NOX",
+    "aliases": [
+      "NOX"
+    ],
+    "type": "private",
+    "status": "announced",
+    "countries": [
+      "DE",
+      "FR",
+      "BE"
+    ],
+    "hq_country": "DE",
+    "service_types": [
+      "Night",
+      "International"
+    ],
+    "booking_url": "https://noxmobility.com",
+    "booking_notes": "NOT YET OPERATIONAL. Planned launch 2027. Monitor website for updates. Do not recommend as a current travel option.",
+    "interrail_accepted": false,
+    "interrail_reservation_required": false,
+    "interrail_reservation_url": "",
+    "approximate_prices_eur": {
+      "short_domestic": "N/A",
+      "long_domestic": "N/A",
+      "key_international": "N/A"
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "ANNOUNCED — not yet operating. Planned Berlin-Paris and Berlin-Bruxelles night trains. Target launch 2027.",
+    "gauge": "1435 (standard)",
+    "runs_night_trains": true
+  },
+  {
+    "short_name": "Velvet",
+    "aliases": [
+      "Proxima"
+    ],
+    "type": "private",
+    "status": "announced",
+    "countries": [
+      "FR"
+    ],
+    "hq_country": "FR",
+    "service_types": [
+      "HSR"
+    ],
+    "booking_url": "",
+    "booking_notes": "",
+    "interrail_accepted": false,
+    "interrail_reservation_required": true,
+    "approximate_prices_eur": {
+      "short_domestic": "",
+      "long_domestic": "",
+      "key_international": ""
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Founded by Rachel Picard and Tim Jackson, funded by Antin. 12 Alstom Avelia Horizon ordered. Paris to Bordeaux, Nantes, Rennes from around 2028. Not bookable yet.",
+    "operator_id": "velvet",
+    "canonical_name": "Velvet Trains",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "short_name": "Le Train",
+    "aliases": [],
+    "type": "private",
+    "status": "announced",
+    "countries": [
+      "FR"
+    ],
+    "hq_country": "FR",
+    "service_types": [
+      "HSR"
+    ],
+    "booking_url": "",
+    "booking_notes": "",
+    "interrail_accepted": false,
+    "interrail_reservation_required": true,
+    "approximate_prices_eur": {
+      "short_domestic": "",
+      "long_domestic": "",
+      "key_international": ""
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Western France high speed, 10 Talgo Avril ordered. Paris to Nantes and Bordeaux added 2026. Launch late 2027 to early 2028. Not bookable yet.",
+    "operator_id": "le_train",
+    "canonical_name": "Le Train",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "short_name": "ilisto",
+    "aliases": [
+      "ilisto"
+    ],
+    "type": "private",
+    "status": "announced",
+    "countries": [
+      "FR"
+    ],
+    "hq_country": "FR",
+    "service_types": [
+      "HSR"
+    ],
+    "booking_url": "",
+    "booking_notes": "",
+    "interrail_accepted": false,
+    "interrail_reservation_required": true,
+    "approximate_prices_eur": {
+      "short_domestic": "",
+      "long_domestic": "",
+      "key_international": ""
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "High frequency all-stops commuter HS. 20 Alstom Avelia Stream. Paris to Lille, Strasbourg, Lyon. Targeting 2028 to 2030. Not bookable yet.",
+    "operator_id": "kevin_speed",
+    "canonical_name": "Kevin Speed",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "short_name": "Heuro",
+    "aliases": [
+      "Heurotrain"
+    ],
+    "type": "private",
+    "status": "announced",
+    "countries": [
+      "NL",
+      "BE",
+      "FR",
+      "GB"
+    ],
+    "hq_country": "NL",
+    "service_types": [
+      "HSR",
+      "International"
+    ],
+    "booking_url": "",
+    "booking_notes": "",
+    "interrail_accepted": false,
+    "interrail_reservation_required": true,
+    "approximate_prices_eur": {
+      "short_domestic": "",
+      "long_domestic": "",
+      "key_international": ""
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Dutch cross-channel startup, Amsterdam, Brussels, Paris, London. Targeting 2028. Not bookable yet.",
+    "operator_id": "heuro",
+    "canonical_name": "Heuro",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "short_name": "Virgin",
+    "aliases": [],
+    "type": "private",
+    "status": "announced",
+    "countries": [
+      "GB",
+      "FR",
+      "BE"
+    ],
+    "hq_country": "GB",
+    "service_types": [
+      "HSR",
+      "International"
+    ],
+    "booking_url": "",
+    "booking_notes": "",
+    "interrail_accepted": false,
+    "interrail_reservation_required": true,
+    "approximate_prices_eur": {
+      "short_domestic": "",
+      "long_domestic": "",
+      "key_international": ""
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Cross-channel challenger to Eurostar, 12 Alstom Avelia Stream ordered, approved Temple Mills depot access. Targeting late 2030. Not bookable yet.",
+    "operator_id": "virgin_trains",
+    "canonical_name": "Virgin Trains",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "short_name": "Polregio",
+    "aliases": [],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "PL"
+    ],
+    "hq_country": "PL",
+    "service_types": [
+      "Regional"
+    ],
+    "booking_url": "https://polregio.pl",
+    "booking_notes": "",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "approximate_prices_eur": {
+      "short_domestic": "",
+      "long_domestic": "",
+      "key_international": ""
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Largest Polish regional operator, separate state company from PKP Intercity.",
+    "operator_id": "polregio",
+    "canonical_name": "Polregio",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "short_name": "Go-Ahead",
+    "aliases": [],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "NO"
+    ],
+    "hq_country": "NO",
+    "service_types": [
+      "Regional",
+      "IC"
+    ],
+    "booking_url": "",
+    "booking_notes": "",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "approximate_prices_eur": {
+      "short_domestic": "",
+      "long_domestic": "",
+      "key_international": ""
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Runs the Oslo to Stavanger southern lines under franchise.",
+    "operator_id": "go_ahead_norge",
+    "canonical_name": "Go-Ahead Norge",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "short_name": "SJ Norge",
+    "aliases": [],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "NO"
+    ],
+    "hq_country": "NO",
+    "service_types": [
+      "IC",
+      "Night"
+    ],
+    "booking_url": "",
+    "booking_notes": "",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "approximate_prices_eur": {
+      "short_domestic": "",
+      "long_domestic": "",
+      "key_international": ""
+    },
+    "parent_company": "SJ AB",
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Operates Trondheim and northern Norwegian lines under franchise.",
+    "operator_id": "sj_norge",
+    "canonical_name": "SJ Norge",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "short_name": "GySEV",
+    "aliases": [
+      "Raaberbahn",
+      "Gyor-Sopron-Ebenfurti Vasut"
+    ],
+    "type": "joint",
+    "status": "active",
+    "countries": [
+      "HU",
+      "AT"
+    ],
+    "hq_country": "HU",
+    "service_types": [
+      "Regional",
+      "International"
+    ],
+    "booking_url": "",
+    "booking_notes": "",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "approximate_prices_eur": {
+      "short_domestic": "",
+      "long_domestic": "",
+      "key_international": ""
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Joint Hungarian and Austrian owned, western Hungary and cross-border to Austria.",
+    "operator_id": "gysev",
+    "canonical_name": "GySEV / Raaberbahn",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "short_name": "BLS",
+    "aliases": [],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "CH"
+    ],
+    "hq_country": "CH",
+    "service_types": [
+      "Regional"
+    ],
+    "booking_url": "https://www.bls.ch",
+    "booking_notes": "",
+    "interrail_accepted": true,
+    "interrail_reservation_required": true,
+    "approximate_prices_eur": {
+      "short_domestic": "",
+      "long_domestic": "",
+      "key_international": ""
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Second largest Swiss operator, Bern region and the Loetschberg.",
+    "operator_id": "bls",
+    "canonical_name": "BLS AG",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "short_name": "Arenaways",
+    "aliases": [],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "IT"
+    ],
+    "hq_country": "IT",
+    "service_types": [
+      "Regional"
+    ],
+    "booking_url": "",
+    "booking_notes": "",
+    "interrail_accepted": false,
+    "interrail_reservation_required": true,
+    "approximate_prices_eur": {
+      "short_domestic": "",
+      "long_domestic": "",
+      "key_international": ""
+    },
+    "parent_company": "Longitude Holding (Renfe 33%)",
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Italian private regional, also traction partner for European Sleeper on the Italian segment.",
+    "operator_id": "arenaways",
+    "canonical_name": "Arenaways",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "short_name": "Gepard",
+    "aliases": [],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "CZ",
+      "GE",
+      "AM"
+    ],
+    "hq_country": "CZ",
+    "service_types": [
+      "International"
+    ],
+    "booking_url": "",
+    "booking_notes": "",
+    "interrail_accepted": false,
+    "interrail_reservation_required": true,
+    "approximate_prices_eur": {
+      "short_domestic": "",
+      "long_domestic": "",
+      "key_international": ""
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Czech private operator, working with Georgian Railway and South Caucasus Railway on tourist trains.",
+    "operator_id": "gepard_express",
+    "canonical_name": "Gepard Express",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "short_name": "VR Sverige",
+    "aliases": [
+      "MTRX",
+      "MTR Express"
+    ],
+    "type": "private",
+    "status": "active",
+    "countries": [
+      "SE"
+    ],
+    "hq_country": "SE",
+    "service_types": [
+      "HSR"
+    ],
+    "booking_url": "",
+    "booking_notes": "",
+    "interrail_accepted": false,
+    "interrail_reservation_required": true,
+    "approximate_prices_eur": {
+      "short_domestic": "",
+      "long_domestic": "",
+      "key_international": ""
+    },
+    "parent_company": "VR Group",
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Formerly MTRX, acquired by Finland's VR in 2024. Open-access Stockholm to Gothenburg.",
+    "operator_id": "vr_snabbtag_sverige",
+    "canonical_name": "VR Snabbtag Sverige",
+    "gauge": "1435 (standard)"
+  },
+  {
+    "short_name": "KTZ",
+    "aliases": [
+      "Kazakhstan Railways",
+      "Qazaqstan Temir Zholy"
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "KZ"
+    ],
+    "hq_country": "KZ",
+    "service_types": [
+      "IC",
+      "Night"
+    ],
+    "booking_url": "https://bilet.railways.kz",
+    "booking_notes": "",
+    "interrail_accepted": false,
+    "interrail_reservation_required": true,
+    "approximate_prices_eur": {
+      "short_domestic": "",
+      "long_domestic": "",
+      "key_international": ""
+    },
+    "parent_company": null,
+    "absorbed_by": null,
+    "absorbed_date": null,
+    "notes": "Kazakhstan Railways, Middle Corridor transit, break of gauge to Chinese standard at the border.",
+    "operator_id": "ktz",
+    "canonical_name": "Qazaqstan Temir Joly",
+    "gauge": "1520 (Russian broad)"
+  },
+  {
+    "operator_id": "atc",
+    "canonical_name": "Astra Trans Carpatic",
+    "short_name": "ATC",
+    "aliases": [
+      "Astra Trans Carpatic SRL",
+      ""
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "RO"
+    ],
+    "hq_country": "RO",
+    "booking_url": "https://astratranscarpatic.ro",
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_atc.jpg",
+    "runs_night_trains": true,
+    "notes": "Astra Trans Carpatic runs night trains in the Back-on-Track database."
+  },
+  {
+    "operator_id": "cs",
+    "canonical_name": "Caledonian Sleeper",
+    "short_name": "CS",
+    "aliases": [
+      "Caledonian Sleeper Ltd.",
+      ""
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "UK"
+    ],
+    "hq_country": "UK",
+    "booking_url": "https://www.sleeper.scot",
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_cs.jpg",
+    "runs_night_trains": true,
+    "notes": "Caledonian Sleeper runs night trains in the Back-on-Track database."
+  },
+  {
+    "operator_id": "es",
+    "canonical_name": "European Sleeper",
+    "short_name": "ES",
+    "aliases": [
+      "European Sleeper Cooperatïe",
+      ""
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "NL"
+    ],
+    "hq_country": "NL",
+    "booking_url": "https://www.europeansleeper.eu",
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_es.jpg",
+    "runs_night_trains": true,
+    "notes": "European Sleeper runs night trains in the Back-on-Track database."
+  },
+  {
+    "operator_id": "ga",
+    "canonical_name": "Go-Ahead Nordic",
+    "short_name": "GA",
+    "aliases": [
+      "Go-Ahead Norge AS",
+      ""
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "UK"
+    ],
+    "hq_country": "UK",
+    "booking_url": "https://go-aheadnordic.com",
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_ga.jpg",
+    "runs_night_trains": true,
+    "notes": "Go-Ahead Nordic runs night trains in the Back-on-Track database."
+  },
+  {
+    "operator_id": "gwr",
+    "canonical_name": "Great Western Railway",
+    "short_name": "GWR",
+    "aliases": [
+      "First Greater Western Ltd.",
+      ""
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "UK"
+    ],
+    "hq_country": "UK",
+    "booking_url": "https://www.gwr.com",
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_gwr.jpg",
+    "runs_night_trains": true,
+    "notes": "Great Western Railway runs night trains in the Back-on-Track database."
+  },
+  {
+    "operator_id": "mt",
+    "canonical_name": "Midnight Trains",
+    "short_name": "MT",
+    "aliases": [
+      "00H00 SAS",
+      ""
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "FR"
+    ],
+    "hq_country": "FR",
+    "booking_url": "https://www.midnight-trains.com",
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_mt.jpg",
+    "runs_night_trains": true,
+    "notes": "Midnight Trains runs night trains in the Back-on-Track database."
+  },
+  {
+    "operator_id": "ote",
+    "canonical_name": "Optima Tours",
+    "short_name": "OTE",
+    "aliases": [
+      "Optima Tours",
+      ""
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "DE"
+    ],
+    "hq_country": "DE",
+    "booking_url": "https://www.optimatours.de",
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_ote.jpg",
+    "runs_night_trains": true,
+    "notes": "Optima Tours runs night trains in the Back-on-Track database."
+  },
+  {
+    "operator_id": "rdc",
+    "canonical_name": "RDC / Alpen-Sylt Nachtexpress",
+    "short_name": "RDC",
+    "aliases": [
+      "RDC Deutschland",
+      ""
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "US"
+    ],
+    "hq_country": "US",
+    "booking_url": "https://www.rdc-deutschland.de",
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_rdc.jpg",
+    "runs_night_trains": true,
+    "notes": "RDC / Alpen-Sylt Nachtexpress runs night trains in the Back-on-Track database."
+  },
+  {
+    "operator_id": "sjn",
+    "canonical_name": "SJ Nord",
+    "short_name": "SJN",
+    "aliases": [
+      "SJ Norge AS",
+      ""
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "NO"
+    ],
+    "hq_country": "NO",
+    "booking_url": "https://www.sj.no/",
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_sjn.jpg",
+    "runs_night_trains": true,
+    "notes": "SJ Nord runs night trains in the Back-on-Track database."
+  },
+  {
+    "operator_id": "uex",
+    "canonical_name": "Urlaubs-Express",
+    "short_name": "UEX",
+    "aliases": [
+      "Train4you Vertriebs GmbH",
+      ""
+    ],
+    "type": "state",
+    "status": "active",
+    "countries": [
+      "DE"
+    ],
+    "hq_country": "DE",
+    "booking_url": "https://buchung.urlaubs-express.de/",
+    "logo_url": "https://back-on-track.eu/wp-content/uploads/2025/03/logo_uex.jpg",
+    "runs_night_trains": true,
+    "notes": "Urlaubs-Express runs night trains in the Back-on-Track database."
+  }
+]

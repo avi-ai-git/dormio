@@ -1,0 +1,15 @@
+.env
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+.streamlit/secrets.toml
+*.log
+chroma_db/
+*.chroma/
+.pytest_cache/
+_ingest_backup/
+*.bak.json
+.claude/
+.vscode/
+.idea/

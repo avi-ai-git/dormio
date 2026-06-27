@@ -1,0 +1,48 @@
+<svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dormio">
+  <title>Dormio</title>
+  <defs>
+    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F2C879" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#F2C879" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .twinkle { animation: tw 3.2s ease-in-out infinite; }
+      .twinkle:nth-child(2) { animation-delay: .5s; }
+      .twinkle:nth-child(3) { animation-delay: 1.1s; }
+      .twinkle:nth-child(4) { animation-delay: 1.7s; }
+      .twinkle:nth-child(5) { animation-delay: 2.3s; }
+      .twinkle:nth-child(6) { animation-delay: .9s; }
+      @keyframes tw { 0%,100% { opacity: .25 } 50% { opacity: 1 } }
+      .glow { animation: gl 4s ease-in-out infinite; }
+      @keyframes gl { 0%,100% { opacity: .5 } 50% { opacity: .9 } }
+      .train { animation: run 6s linear infinite; }
+      @keyframes run { 0% { transform: translateX(-40px) } 100% { transform: translateX(560px) } }
+      .word { font-family: Georgia, 'Times New Roman', serif; }
+      .sub { font-family: 'Helvetica Neue', Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <g fill="#CCC5B9">
+    <circle class="twinkle" cx="120" cy="55" r="2"/>
+    <circle class="twinkle" cx="210" cy="38" r="1.5"/>
+    <circle class="twinkle" cx="300" cy="62" r="1.5"/>
+    <circle class="twinkle" cx="360" cy="40" r="2"/>
+    <circle class="twinkle" cx="540" cy="60" r="1.5"/>
+    <circle class="twinkle" cx="80" cy="95" r="1.5"/>
+  </g>
+
+  <circle class="glow" cx="470" cy="95" r="46" fill="url(#moonGlow)"/>
+  <path d="M 487 70 a 30 30 0 1 0 0 50 a 24 24 0 0 1 0 -50 z" fill="#F2C879"/>
+
+  <text class="word" x="300" y="190" text-anchor="middle" font-size="92" letter-spacing="-2" fill="#EDE7DB">dormio</text>
+  <text class="sub" x="300" y="222" text-anchor="middle" font-size="13" letter-spacing="7" fill="#EB5E28">NIGHT TRAINS ACROSS EUROPE</text>
+
+  <line x1="40" y1="255" x2="560" y2="255" stroke="#403D39" stroke-width="3"/>
+  <g fill="#EB5E28">
+    <circle cx="120" cy="255" r="3"/>
+    <circle cx="240" cy="255" r="3"/>
+    <circle cx="360" cy="255" r="3"/>
+    <circle cx="480" cy="255" r="3"/>
+  </g>
+  <circle class="train" cx="40" cy="255" r="4" fill="#F2C879"/>
+</svg>

@@ -1,0 +1,33 @@
+{
+  "description": "Golden set for Dormio. Routing queries carry the correct graph mode; knowledge queries carry the guide that should be retrieved. Used by eval/run_eval.py to score routing accuracy, route correctness, and retrieval hit-rate.",
+  "cases": [
+    {"query": "Vienna to Rome", "intent": "route", "mode": "routes"},
+    {"query": "Is there a night train from Gdynia to Vienna?", "intent": "route", "mode": "routes"},
+    {"query": "Amsterdam to Prague by sleeper", "intent": "route", "mode": "routes"},
+    {"query": "night train Berlin to Zürich", "intent": "route", "mode": "routes"},
+    {"query": "Paris to Warsaw by night train", "intent": "route", "mode": "routes"},
+    {"query": "night trains from Krakow", "intent": "route", "mode": "from"},
+    {"query": "where can I go from Stockholm overnight", "intent": "route", "mode": "from"},
+    {"query": "Lisbon to Madrid sleeper", "intent": "route", "mode": "offmap"},
+    {"query": "Munich to Venice", "intent": "route", "mode": "routes"},
+    {"query": "Paris to Briançon", "intent": "route", "mode": "routes"},
+    {"query": "London to Edinburgh overnight", "intent": "route", "mode": "routes"},
+    {"query": "Atlantis to Rome", "intent": "route", "mode": "offmap"},
+    {"query": "Bar to Belgrade", "intent": "route", "mode": "routes"},
+
+    {"query": "is my interrail pass valid on a nightjet sleeper", "intent": "knowledge", "sources": ["interrail-and-eurail-passes.md"]},
+    {"query": "what is the difference between a couchette and a sleeper", "intent": "knowledge", "sources": ["accommodation-classes.md"]},
+    {"query": "how do I book a night train in Europe", "intent": "knowledge", "sources": ["how-to-book-a-night-train.md", "seasons-and-booking-windows.md"]},
+    {"query": "can I take my bike on a night train", "intent": "knowledge", "sources": ["night-train-travel-tips.md"]},
+    {"query": "how far in advance can I book a sleeper", "intent": "knowledge", "sources": ["seasons-and-booking-windows.md", "how-to-book-a-night-train.md"]},
+    {"query": "do night trains have catering or food", "intent": "knowledge", "sources": ["night-train-travel-tips.md"]},
+    {"query": "are night trains seasonal or do they run all year", "intent": "knowledge", "sources": ["seasons-and-booking-windows.md"]},
+    {"query": "is there a women only compartment on night trains", "intent": "knowledge", "sources": ["accommodation-classes.md"]},
+
+    {"query": "how do I get from Gdynia to Vienna and is my interrail pass valid", "intent": "both", "mode": "routes", "sources": ["interrail-and-eurail-passes.md"]},
+    {"query": "Vienna to Rome, and what can I sleep in", "intent": "both", "mode": "routes", "sources": ["accommodation-classes.md"]},
+
+    {"query": "hello there", "intent": "chitchat"},
+    {"query": "what is the weather like today", "intent": "chitchat"}
+  ]
+}
