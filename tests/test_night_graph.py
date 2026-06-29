@@ -70,6 +70,7 @@ def test_route_lookup_modes():
     assert route_lookup("Atlantis", "Rome")["mode"] == "offmap"
     assert route_lookup("", "")["mode"] == "need_input"
     assert route_lookup("", "", country="PL")["mode"] == "country"
+    assert route_lookup("", "", operator="regiojet")["mode"] == "operator"
 
 
 def test_plan_routes_ranks_and_is_sensible():
@@ -102,6 +103,24 @@ def test_routes_in_country_matches_the_map_filter():
     # The chat helper and the Night Map read the same field, so the counts agree.
     same = [s for s in ng.all_services() if "PL" in s.get("countries", [])]
     assert len(routes) == len(same)
+
+
+def test_resolve_operator_by_name_and_alias():
+    assert ng.resolve_operator("RegioJet") == "regiojet"
+    assert ng.resolve_operator("regiojet") == "regiojet"
+    assert ng.resolve_operator("RJ") == "regiojet"
+    assert ng.resolve_operator("MÁV-START") == "mav_start"
+    assert ng.resolve_operator("Nonesuch Rail") is None
+
+
+def test_routes_by_operator_lists_real_services():
+    routes = ng.routes_by_operator("regiojet")
+    assert routes, "RegioJet runs night trains in the data"
+    assert all(s.get("operator_id") == "regiojet"
+               or any("regio" in str(o).lower() for o in s.get("operators", [])) for s in routes)
+    # The Przemysl to Prague night train is a RegioJet service, and it touches Poland.
+    pairs = {(s["from_city"], s["to_city"]) for s in routes}
+    assert any(a.startswith("Przemy") and b in ("Praha", "Prague") for a, b in pairs)
 
 
 if __name__ == "__main__":

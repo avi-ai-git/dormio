@@ -21,6 +21,8 @@ ROUTING_CASES = [
     ("how do I get from Gdynia to Vienna and can I take a bike", "both"),
     ("what night trains run in Poland", "route"),
     ("night trains in Finland", "route"),
+    ("routes on RegioJet", "route"),
+    ("what trains does PKP Intercity run", "route"),
 ]
 
 
@@ -90,6 +92,24 @@ def test_country_answer_lists_real_routes_not_a_hedge():
     assert "not mapped" not in answer
     assert "not covered" not in answer
     assert "isn't covered" not in answer
+
+
+def test_classify_extracts_operator():
+    out = agent.classify("routes on RegioJet")
+    assert out["intent"] == "route"
+    assert out["operator"] == "regiojet"
+
+
+def test_operator_answer_lists_real_routes_not_a_hallucination():
+    out = agent.answer_query("which trains does RegioJet run")
+    assert out["route_result"]["mode"] == "operator"
+    assert out["route_result"]["operator_routes"], "RegioJet runs real night trains"
+    answer = out["answer"].lower()
+    assert "regiojet" in answer
+    # The live app once invented that RegioJet was a daytime coach, not a night train
+    # operator. Guard against that hallucination.
+    assert "coach" not in answer
+    assert "not a night train" not in answer
 
 
 if __name__ == "__main__":

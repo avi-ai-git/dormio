@@ -399,6 +399,59 @@ def routes_in_country(code: str) -> list:
                                        display_city(s["to_city"]).lower()))
 
 
+# Operator name resolution, the twin of the country lookup, for "routes on RegioJet".
+_OPERATOR_BY_NAME: dict[str, str] = {}   # folded name, code, or alias -> operator_id
+_OPERATOR_DISPLAY: dict[str, str] = {}   # operator_id -> friendly display name
+try:
+    with open(_OPERATORS_PATH, encoding="utf-8") as _fh:
+        for _op in json.load(_fh):
+            _oid = _op.get("operator_id", "")
+            if not _oid:
+                continue
+            _OPERATOR_DISPLAY[_oid] = _op.get("canonical_name") or _op.get("short_name") or _oid
+            for _nm in [_oid, _op.get("canonical_name", ""), _op.get("short_name", ""), *_op.get("aliases", [])]:
+                if _nm:
+                    _OPERATOR_BY_NAME.setdefault(_fold(_nm), _oid)
+except FileNotFoundError:
+    pass
+# Also map the display names that actually appear on services, so a joint train resolves too.
+for _svc in _SERVICES:
+    _disp, _oid = _svc.get("operator", ""), _svc.get("operator_id", "")
+    if _disp and _oid:
+        _OPERATOR_BY_NAME.setdefault(_fold(_disp), _oid)
+        _OPERATOR_DISPLAY.setdefault(_oid, _disp)
+
+
+def resolve_operator(name: str) -> str | None:
+    """Operator id for an operator named in free text, or None.
+
+    The twin of resolve_country for cities. Folds case and diacritics and accepts the
+    full name, a short name, or an alias, so RegioJet, regiojet, and RJ all give the
+    same operator id.
+    """
+    return _OPERATOR_BY_NAME.get(_fold(name))
+
+
+def operator_name(operator_id: str) -> str:
+    """Friendly display name for an operator id, as it appears on services."""
+    return _OPERATOR_DISPLAY.get(operator_id, operator_id)
+
+
+def routes_by_operator(operator_id: str) -> list:
+    """Every night-train service an operator runs, by operator id, primary or joint.
+
+    Matches the primary operator and, for a joint train, any operator named in the
+    service. Sorted by origin then destination for a stable, readable order.
+    """
+    if not operator_id:
+        return []
+    hits = [s for s in _SERVICES
+            if s.get("operator_id") == operator_id
+            or any(_OPERATOR_BY_NAME.get(_fold(o)) == operator_id for o in s.get("operators", []))]
+    return sorted(hits, key=lambda s: (display_city(s["from_city"]).lower(),
+                                       display_city(s["to_city"]).lower()))
+
+
 if __name__ == "__main__":
     print("services:", len(_SERVICES), "| nodes:", len(_NODES))
     print("Vienna to Rome direct:", [s["operator"] for s in direct("Vienna", "Rome")])

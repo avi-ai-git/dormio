@@ -105,8 +105,10 @@ def _booking_links(route_result: dict) -> list:
         services += [leg["service"] for leg in opt["legs"]]
     for r in route_result.get("from_list", []) + route_result.get("origin_options", []):
         services.append(r["service"])
-    # A country answer lists services directly, so a traveller can book straight from it.
+    # A country or an operator answer lists services directly, so a traveller can book
+    # straight from it.
     services += route_result.get("country_routes", [])
+    services += route_result.get("operator_routes", [])
     seen, links = set(), []
     for svc in services:
         operator = svc["operator"]

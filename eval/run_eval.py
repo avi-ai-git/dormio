@@ -62,7 +62,7 @@ def main() -> None:
         if "mode" in c:
             route_total += 1
             res = agent.route_lookup(cls.get("from_city", ""), cls.get("to_city", ""),
-                                     country=cls.get("country", ""))
+                                     country=cls.get("country", ""), operator=cls.get("operator", ""))
             if res.get("mode") == c["mode"]:
                 route_ok += 1
             else:

@@ -16,6 +16,7 @@
     {"query": "Bar to Belgrade", "intent": "route", "mode": "routes"},
     {"query": "What night trains run in Poland?", "intent": "route", "mode": "country"},
     {"query": "night trains in Finland", "intent": "route", "mode": "country"},
+    {"query": "which trains does RegioJet run", "intent": "route", "mode": "operator"},
 
     {"query": "is my interrail pass valid on a nightjet sleeper", "intent": "knowledge", "sources": ["interrail-and-eurail-passes.md"]},
     {"query": "what is the difference between a couchette and a sleeper", "intent": "knowledge", "sources": ["accommodation-classes.md"]},

@@ -51,6 +51,7 @@ class AgentState(TypedDict):
     from_city: str
     to_city: str
     country: str
+    operator: str
     model_key: Optional[str]
     history: list
     intent: Intent
@@ -102,9 +103,26 @@ def _get_llm(model_key: Optional[str]):
 # --- the routing tool: a deterministic lookup over the night-train graph --------
 
 def route_lookup(from_city: str, to_city: str, pref: str = "changes", via: str = "",
-                 country: str = "") -> dict:
+                 country: str = "", operator: str = "") -> dict:
     """Resolve a routing question against the graph. No model, fully deterministic."""
     raw_from, raw_to = (from_city or "").strip(), (to_city or "").strip()
+
+    # An operator question lists the trains that operator runs, optionally narrowed to a
+    # country. A specific city still wins, so this runs only when no city is named.
+    if operator and not raw_from and not raw_to:
+        oid = night_graph.resolve_operator(operator) or operator
+        routes = night_graph.routes_by_operator(oid)
+        code = night_graph.resolve_country(country) if country else ""
+        if code:
+            routes = [r for r in routes if code in r.get("countries", [])]
+        return {
+            "from": "", "to": "", "from_on_map": False, "to_on_map": False,
+            "options": [], "options2": [], "via": "", "from_list": [], "origin_options": [],
+            "mode": "operator",
+            "operator": night_graph.operator_name(oid),
+            "country": night_graph.COUNTRY_NAMES.get(code, "") if code else "",
+            "operator_routes": routes,
+        }
 
     # A country-level question lists that country's night trains, the same set the Night
     # Map shows. A specific city still wins, so this runs only when no city is named.
@@ -179,6 +197,10 @@ _KNOWLEDGE_HINTS = (
 # The generic question words inside the hints above. On their own they are too weak to
 # beat an explicit country listing, so a country plus only these still lists the country.
 _GENERIC_HINTS = ("how ", "what ", "when ", "why ", "which class")
+# Words that signal the traveller wants a list of routes, used to tell an operator or
+# country listing apart from a how-to question that merely names one.
+_LIST_WORDS = {"route", "routes", "train", "trains", "run", "runs", "running",
+               "operate", "operates", "serve", "serves"}
 # Common filler around a city name in free text, so we do not mistake it for a place.
 _FILLER = {
     "night", "train", "trains", "sleeper", "couchette", "seat", "the", "a", "an",
@@ -259,30 +281,58 @@ def _extract_country(query: str) -> str:
     return ""
 
 
-def _heuristic_route(query: str, from_city: str, to_city: str) -> tuple[Intent, str, str, str]:
+def _extract_operator(query: str) -> str:
+    """Operator id if the message names an operator, like 'routes on RegioJet'.
+
+    Scans word windows against the known operator names and aliases, longest first so
+    'PKP Intercity' wins over a single word. A short token is read only when written
+    uppercase, so a common word never resolves to an operator code by accident.
+    """
+    tokens = re.findall(r"[A-Za-zÀ-ÿ]+", query or "")
+    for size in range(min(3, len(tokens)), 0, -1):
+        for i in range(len(tokens) - size + 1):
+            phrase = " ".join(tokens[i:i + size])
+            if len(phrase) <= 3 and not phrase.isupper():
+                continue
+            oid = night_graph.resolve_operator(phrase)
+            if oid:
+                return oid
+    return ""
+
+
+def _heuristic_route(query: str, from_city: str, to_city: str) -> tuple[Intent, str, str, str, str]:
     if from_city or to_city:
-        return "route", from_city, to_city, ""
+        return "route", from_city, to_city, "", ""
     f, t = _extract_cities(query)
     has_route = bool(f or t)
     q = query.lower()
     has_knowledge = any(h in q for h in _KNOWLEDGE_HINTS)
     if has_route and has_knowledge:
-        return "both", f, t, ""
+        return "both", f, t, "", ""
     if has_route:
-        return "route", f, t, ""
+        return "route", f, t, "", ""
+    operator = _extract_operator(query)
     country = _extract_country(query)
-    if country:
-        # A country plus a real how-to (bike, pass, booking) answers both. A country on
-        # its own, or with only a generic question word, lists that country's trains.
-        topic = any(h in q for h in _KNOWLEDGE_HINTS if h not in _GENERIC_HINTS)
-        return ("both" if topic else "route"), "", "", country
+    if operator or country:
+        # Treat it as a listing only when the message actually asks for routes or trains.
+        # An operator or country named inside a how-to question, like "is my pass valid on
+        # Nightjet", stays a knowledge question.
+        wants_list = bool(set(re.findall(r"[a-z]+", q)) & _LIST_WORDS)
+        if wants_list:
+            # A listing plus a real how-to like a bike or a pass also answers that.
+            topic = any(h in q for h in _KNOWLEDGE_HINTS
+                        if h not in _GENERIC_HINTS and h not in ("book", "booking"))
+            return ("both" if topic else "route"), "", "", country, operator
+        if has_knowledge:
+            return "knowledge", "", "", "", ""
+        return "route", "", "", country, operator
     if has_knowledge:
-        return "knowledge", "", "", ""
-    return "chitchat", "", "", ""
+        return "knowledge", "", "", "", ""
+    return "chitchat", "", "", "", ""
 
 
 _ROUTER_PROMPT = """You route a traveller's message for a night-train assistant. Reply with ONLY a JSON object:
-{{"intent": "route" | "knowledge" | "both" | "chitchat", "from_city": "", "to_city": "", "country": ""}}
+{{"intent": "route" | "knowledge" | "both" | "chitchat", "from_city": "", "to_city": "", "country": "", "operator": ""}}
 
 route: they want to know whether or how to travel somewhere by night train. Naming a class like sleeper, couchette, or seat inside a route request is still route, not knowledge.
 knowledge: they ask how night trains work in general (booking, Interrail or Eurail, couchette vs sleeper, bikes, seasons, prices, accessibility), without a specific trip.
@@ -290,16 +340,19 @@ both: a specific route question and a general knowledge question together.
 chitchat: a greeting or anything off topic, like the weather.
 Fill from_city and to_city whenever the message names them, even if the city may not have a night train. A stopover or via city is not the from or the to, so for "Berlin to Bucharest via Krakow" the from is Berlin and the to is Bucharest.
 Set country, and leave from_city and to_city empty, when they ask about a whole country rather than a city pair, like "night trains in Poland" or "what runs in Finland". The intent is then route.
+Set operator when they ask which trains or routes an operator runs, like "routes on RegioJet" or "what does PKP Intercity run". Normalise a misheard name to the real operator, so Radiojet is RegioJet and Max Start is MÁV-START. The intent is then route.
 
 Examples:
-"night train from Berlin to Vienna" -> {{"intent":"route","from_city":"Berlin","to_city":"Vienna","country":""}}
-"Amsterdam to Prague by sleeper" -> {{"intent":"route","from_city":"Amsterdam","to_city":"Prague","country":""}}
-"is my interrail pass valid on nightjet" -> {{"intent":"knowledge","from_city":"","to_city":"","country":""}}
-"how do I get from Paris to Vienna and can I take a bike" -> {{"intent":"both","from_city":"Paris","to_city":"Vienna","country":""}}
-"trains out of Munich" -> {{"intent":"route","from_city":"Munich","to_city":"","country":""}}
-"what night trains run in Poland" -> {{"intent":"route","from_city":"","to_city":"","country":"Poland"}}
-"night trains in Finland" -> {{"intent":"route","from_city":"","to_city":"","country":"Finland"}}
-"what is the weather like" -> {{"intent":"chitchat","from_city":"","to_city":"","country":""}}
+"night train from Berlin to Vienna" -> {{"intent":"route","from_city":"Berlin","to_city":"Vienna","country":"","operator":""}}
+"Amsterdam to Prague by sleeper" -> {{"intent":"route","from_city":"Amsterdam","to_city":"Prague","country":"","operator":""}}
+"is my interrail pass valid on nightjet" -> {{"intent":"knowledge","from_city":"","to_city":"","country":"","operator":""}}
+"how do I get from Paris to Vienna and can I take a bike" -> {{"intent":"both","from_city":"Paris","to_city":"Vienna","country":"","operator":""}}
+"trains out of Munich" -> {{"intent":"route","from_city":"Munich","to_city":"","country":"","operator":""}}
+"what night trains run in Poland" -> {{"intent":"route","from_city":"","to_city":"","country":"Poland","operator":""}}
+"night trains in Finland" -> {{"intent":"route","from_city":"","to_city":"","country":"Finland","operator":""}}
+"which routes can I book on RegioJet" -> {{"intent":"route","from_city":"","to_city":"","country":"","operator":"RegioJet"}}
+"what does PKP Intercity run" -> {{"intent":"route","from_city":"","to_city":"","country":"","operator":"PKP Intercity"}}
+"what is the weather like" -> {{"intent":"chitchat","from_city":"","to_city":"","country":"","operator":""}}
 
 Use the recent conversation to resolve follow-ups. "how do I book it" after a route is a knowledge question. When a follow-up names a new city it is a new route, and you keep the other endpoint from the conversation: after talking about Berlin to Bucharest, "what about from Krakow" means from_city Krakow and to_city Bucharest, and "is there anything from Poland" means from_city Krakow or the named Polish city to Bucharest.
 
@@ -309,11 +362,11 @@ Use the recent conversation to resolve follow-ups. "how do I book it" after a ro
 def _router_node(state: AgentState) -> dict:
     query = state.get("query", "")
     from_city, to_city = state.get("from_city", ""), state.get("to_city", "")
-    country = state.get("country", "")
+    country, operator = state.get("country", ""), state.get("operator", "")
 
     # The structured form path is unambiguous: both cities given means a route.
     if from_city and to_city:
-        return {"intent": "route", "from_city": from_city, "to_city": to_city, "country": ""}
+        return {"intent": "route", "from_city": from_city, "to_city": to_city, "country": "", "operator": ""}
 
     llm = _get_llm(state.get("model_key"))
     if llm is not None:
@@ -327,18 +380,19 @@ def _router_node(state: AgentState) -> dict:
             if intent in ("route", "knowledge", "both", "chitchat"):
                 # Pass the extracted cities through as given. The graph decides whether
                 # each is on the network, so an off-map origin is reported, not dropped.
-                # A country is folded to its ISO code so the tool sees one clean value.
+                # A country and an operator are folded to a clean code or id for the tool.
                 return {
                     "intent": intent,
                     "from_city": (data.get("from_city") or "").strip() or from_city,
                     "to_city": (data.get("to_city") or "").strip() or to_city,
                     "country": night_graph.resolve_country(data.get("country") or "") or country,
+                    "operator": night_graph.resolve_operator(data.get("operator") or "") or operator,
                 }
         except Exception as exc:
             logger.warning("router parse failed, using heuristic: %s", exc)
 
-    intent, f, t, c = _heuristic_route(query, from_city, to_city)
-    return {"intent": intent, "from_city": f, "to_city": t, "country": c or country}
+    intent, f, t, c, o = _heuristic_route(query, from_city, to_city)
+    return {"intent": intent, "from_city": f, "to_city": t, "country": c or country, "operator": o or operator}
 
 
 def _detect_pref(query: str) -> str:
@@ -383,7 +437,7 @@ def _route_tool_node(state: AgentState) -> dict:
         query = state.get("query", "")
         result = route_lookup(state.get("from_city", ""), state.get("to_city", ""),
                               pref=_detect_pref(query), via=_detect_via(query),
-                              country=state.get("country", ""))
+                              country=state.get("country", ""), operator=state.get("operator", ""))
         web = []
         a = result.get("from") or state.get("from_city", "")
         b = result.get("to") or state.get("to_city", "")
@@ -478,6 +532,21 @@ def _route_facts(result: dict) -> str:
                 lines.append(f"and {len(routes) - _COUNTRY_LIST_CAP} more, the full set is on the Night Map.")
         else:
             lines.append(f"There are no night trains listed for {name} in the data here.")
+    elif mode == "operator":
+        name = result.get("operator", "that operator")
+        where = f" in or through {result['country']}" if result.get("country") else ""
+        routes = result.get("operator_routes", [])
+        if routes:
+            lines.append(f"Night trains run by {name}{where}, {len(routes)} in total:")
+            for svc in routes[:_COUNTRY_LIST_CAP]:
+                frm = night_graph.display_city(svc["from_city"])
+                to = night_graph.display_city(svc["to_city"])
+                season = " (seasonal)" if svc.get("status") and svc["status"] != "active" else ""
+                lines.append(f"- {frm} to {to}{season}")
+            if len(routes) > _COUNTRY_LIST_CAP:
+                lines.append(f"and {len(routes) - _COUNTRY_LIST_CAP} more, the full set is on the Night Map.")
+        else:
+            lines.append(f"I do not have any night trains run by {name}{where} in the data here.")
     return "\n".join(lines)
 
 
@@ -501,6 +570,7 @@ Write like a helpful person, not a brochure:
 - Open with one short, direct sentence that answers the question.
 - When you describe a route or a chain, lay it out as a clear itinerary in bullet points: each leg with the operator, the departure time if known, and the sleeping options. Keep the bullets short.
 - When the facts list a country's night trains, say how many there are, then list them as short bullets, each with the origin, the destination, and the operator. Point them to the Night Map for the full set, and add no train that is not in the facts.
+- When the facts list the trains an operator runs, say how many there are and list them as short bullets with the origin and the destination. Point them to the operator's booking page below and the Night Map, and add no train that is not in the facts.
 - For a knowledge question, answer in a sentence or two, in plain words.
 - You can suggest a natural follow-up, or point them to the booking links shown below your message, or to the Night Train Explorer to see the whole map.
 - If web results are given, use them only for the last mile or the connection the night-train data does not have, and say that part comes from a web search the traveller should confirm.
@@ -616,8 +686,8 @@ def answer_query(query: str, from_city: str = "", to_city: str = "",
     """
     base_state = {
         "query": query or "", "from_city": from_city or "", "to_city": to_city or "",
-        "country": "", "model_key": model_key, "history": history or [], "intent": "",
-        "route_result": {}, "knowledge": [], "web": [], "answer": "", "sources": [],
+        "country": "", "operator": "", "model_key": model_key, "history": history or [],
+        "intent": "", "route_result": {}, "knowledge": [], "web": [], "answer": "", "sources": [],
     }
     state = _run_graph(base_state)
     return {
@@ -656,8 +726,8 @@ def _run_graph(base_state: dict) -> dict:
 def classify(query: str, model_key: Optional[str] = None) -> dict:
     """Run only the router. Returns {intent, from_city, to_city}. Used by the eval."""
     return _router_node({"query": query or "", "from_city": "", "to_city": "", "country": "",
-                         "model_key": model_key, "history": [], "intent": "", "route_result": {},
-                         "knowledge": [], "web": [], "answer": "", "sources": []})
+                         "operator": "", "model_key": model_key, "history": [], "intent": "",
+                         "route_result": {}, "knowledge": [], "web": [], "answer": "", "sources": []})
 
 
 def plan_night(from_city: str, to_city: str, model_key: Optional[str] = None) -> dict:
