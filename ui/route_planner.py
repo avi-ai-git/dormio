@@ -25,13 +25,13 @@ _SPINNERS = [
     "Plotting your night on the rails...",
 ]
 
-# Four starters that double as test cases, one per capability: a one-change route with
-# alternatives, a clean direct, the from-a-city discovery, and an off-map web last mile.
+# Four starters that span the app's distinct capabilities, one each: a routed journey with
+# alternatives, a whole country, an operator, and a how-it-works retrieval question.
 EXAMPLES = [
     "Berlin to Bucharest",
-    "Vienna to Rome",
-    "Night trains from Prague",
-    "Gdynia to Rijeka",
+    "Night trains in Poland",
+    "Routes on ÖBB Nightjet",
+    "Is my Interrail pass valid on a sleeper?",
 ]
 
 
@@ -186,8 +186,8 @@ def render_route_planner():
         st.subheader("Where do you want to sleep your way across Europe?")
         st.markdown(
             "Type your trip in the chat box at the bottom, like **Berlin to Bucharest**. Leave the "
-            "destination out to see everywhere a city's night trains go, or ask how something works. "
-            "Keep talking and I remember the trip."
+            "destination out to see everywhere a city's night trains go, name a whole country or an "
+            "operator, or ask how something works. Keep talking and I remember the trip."
         )
         st.caption("Or tap an example to start:")
         cols = st.columns(len(EXAMPLES))

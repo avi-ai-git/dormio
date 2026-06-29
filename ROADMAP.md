@@ -2,6 +2,14 @@
 
 Dormio is intentionally lean for now. These are the ideas I want to keep, gathered from testing and from feedback, roughly in the order I would build them. Most are passion-project scope rather than things the core needs.
 
+## Recently shipped
+
+These closed real gaps found in testing, each reading the same data the map already used.
+
+- Country lookup, so night trains in Poland lists every route that runs there, the set the map shows.
+- Operator lookup, so routes on RegioJet lists the trains an operator runs, with a booking link, instead of the model guessing.
+- A tighter web search, used only when retrieval finds nothing or the question is about a live price, so a how-it-works answer stays grounded in the cited guides.
+
 ## Routing
 
 - Constrained journeys, where you say you want to pass through a city, like Berlin to Madrid by way of Paris, and the search honours it instead of only finding the quickest path.
