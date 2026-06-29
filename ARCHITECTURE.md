@@ -19,7 +19,7 @@ The traveller planning one specific overnight trip who wants a straight answer. 
 ```
 your message
    -> input safety (rate limit, prompt-injection filter, Mistral moderation)
-   -> router node (intent and any cities)
+   -> router node (intent, any cities, and any country)
         route / both -> route tool node -> the night-train graph
         knowledge    -> knowledge tool node -> ChromaDB retrieval
         off the map  -> web search for the overland last mile
@@ -29,7 +29,7 @@ your message
 
 ## The agent, agent/agent.py
 
-A small LangGraph with a router, two tool nodes, and a synthesis node. The router reads the latest message and the recent thread, decides between route, knowledge, both, and chitchat, and pulls out any cities. With a model it uses a short few-shot prompt that returns JSON. Without a model, or under test, it falls back to a deterministic heuristic that reads the text around the word to and checks each candidate city against the graph, so the pipeline runs with no keys at all.
+A small LangGraph with a router, two tool nodes, and a synthesis node. The router reads the latest message and the recent thread, decides between route, knowledge, both, and chitchat, and pulls out any cities or a country. With a model it uses a short few-shot prompt that returns JSON. Without a model, or under test, it falls back to a deterministic heuristic that reads the text around the word to and checks each candidate city against the graph, so the pipeline runs with no keys at all.
 
 Synthesis writes one answer from the tool outputs only, in the context of the thread, so a follow-up like how do I book it resolves against the previous turn. The prompt allows clean bullet points for a multi-leg itinerary, bans invented trains, times, and prices, bans headings and long dashes, and tells the model to favour trains then buses and never to lead with a flight.
 
@@ -45,7 +45,7 @@ A leg is one ride on one service between two of its stops. The weight of a leg i
 
 Two guards keep the alternatives sensible. A cost cap keeps only journeys within twice the best total or twelve hours longer, so Berlin to Munich to Vienna to Bucharest survives while a forty-hour detour is dropped. A same-city transfer guard blocks changes that only swap stations inside one city, which removes artifacts like a pointless change at a second Vienna station. Results are de-duplicated by their city path, keeping the fastest of any duplicates. This is how the assistant offers a real choice, by way of Budapest or by way of Vienna, with nobody hardcoding the via city.
 
-One honest limit. A leg counts the whole service duration, because the open data carries only endpoint times, which slightly overcounts a partial leg and, usefully, penalises odd detours. Per-stop times are the upgrade and are in the roadmap. Around plan_routes sit from_city for the discovery mode, all_services for the map, route_geometry and service_endpoints for drawing, and the direct and chain building blocks. Everything is deterministic and offline, so the same question always gives the same answer and an honest no night train is a real result.
+One honest limit. A leg counts the whole service duration, because the open data carries only endpoint times, which slightly overcounts a partial leg and, usefully, penalises odd detours. Per-stop times are the upgrade and are in the roadmap. Around plan_routes sit from_city for the discovery mode, all_services for the map, route_geometry and service_endpoints for drawing, and the direct and chain building blocks. A country question takes a parallel path, where resolve_country reads a name or a code and routes_in_country returns every service that runs through it, the same field the map filters on, so the chat and the map never disagree on what runs in Poland. Everything is deterministic and offline, so the same question always gives the same answer and an honest no night train is a real result.
 
 ## The knowledge tool, retrieval, agent/knowledge.py
 
@@ -73,7 +73,7 @@ The sidebar offers three chat models, Claude Haiku 4.5 through OpenRouter as the
 
 ## Evaluation, eval/run_eval.py
 
-A golden set of 25 questions, each tagged with the tool it should reach and the outcome it should produce, scores whether the router picks the right tool, whether the graph returns the right kind of result, and whether retrieval finds the right guide. A judge flag adds groundedness, an automated check that each answer is supported by the facts the tools returned. The latest numbers are routing 100 percent live and 96 percent offline, route correctness 100 percent, retrieval 90 percent, and groundedness 4.7 out of 5. Alongside the eval, 61 offline tests cover the graph, retrieval, the agent, safety, data integrity, and the failure paths.
+A golden set of 27 questions, each tagged with the tool it should reach and the outcome it should produce, scores whether the router picks the right tool, whether the graph returns the right kind of result including the country mode, and whether retrieval finds the right guide. A judge flag adds groundedness, an automated check that each answer is supported by the facts the tools returned. The latest numbers are routing 100 percent live and 96 percent offline, route correctness 100 percent, retrieval 90 percent, and groundedness around 4 out of 5. Alongside the eval, 67 offline tests cover the graph, retrieval, the agent, safety, data integrity, and the failure paths.
 
 ## What I deliberately left out
 

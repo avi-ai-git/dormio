@@ -16,7 +16,7 @@ I wanted one place that answers the real questions. Is there a night train from 
 
 Dormio has three tabs.
 
-Ask Dormio is the conversation. The user types a trip in plain words and keeps talking, and it remembers the thread. Ask for a route and it ranks the best night trains, a direct sleeper or a journey with one or two changes, and it shows the real alternatives, Berlin to Bucharest by way of Budapest or by way of Vienna. Ask a how-does-it-work question, like whether an Interrail pass covers a couchette, and it answers from real guides and operator notes and shows the sources. When a trip runs off the edge of the network, like the last stretch from Nice down to Monaco, it searches the web for that one leg and labels the part that came from a search.
+Ask Dormio is the conversation. The user types a trip in plain words and keeps talking, and it remembers the thread. Ask for a route and it ranks the best night trains, a direct sleeper or a journey with one or two changes, and it shows the real alternatives, Berlin to Bucharest by way of Budapest or by way of Vienna. Ask about a whole country and it lists every night train that runs there, the same set the map shows, so night trains in Poland brings back all 28. Ask a how-does-it-work question, like whether an Interrail pass covers a couchette, and it answers from real guides and operator notes and shows the sources. When a trip runs off the edge of the network, like the last stretch from Nice down to Monaco, it searches the web for that one leg and labels the part that came from a search.
 
 The Night Map is the whole network on one map. Every night train in Europe drawn as an arc, with a switch between Night Train Routes and Night Train Operators. Filter by country, sort by duration or by when a train leaves or arrives, narrow to trains that carry bikes, and the map and the list move together. Each card shows the times, the cities the train calls at, and the CO2 for the trip.
 
@@ -29,8 +29,8 @@ Every message runs through the same small pipeline.
 ```
 a question
    -> input safety (rate limit, prompt-injection filter, Mistral moderation)
-   -> router (route, knowledge, both, or chitchat, plus any cities it can read)
-        route      -> the night-train graph, a deterministic lookup over 204 routes
+   -> router (route, knowledge, both, or chitchat, plus any cities or a country it can read)
+        route      -> the night-train graph, a deterministic lookup over 204 routes, by city pair, from one city, or across a country
         knowledge  -> ChromaDB retrieval over guides and operator notes, with sources
         off the map-> a web search for the overland last mile, trains first
    -> synthesis, one grounded answer written only from what the tools returned
@@ -41,7 +41,7 @@ The rule that holds the whole thing together is simple. The model never decides 
 
 ## The design decisions, and why I went this way
 
-Routing comes from a graph, not the model. A language model asked to plan a night train will invent one, a plausible train number, a believable time, a route that does not run. So routing is a deterministic search over the real network. Cities are nodes, services are edges, and a weighted k-shortest-paths search returns the best few journeys. The same question always gives the same answer, the app cannot hallucinate a train, and an honest no night train is a valid result. This is also the part anyone can read and check line by line, which is the point.
+Routing comes from a graph, not the model. A language model asked to plan a night train will invent one, a plausible train number, a believable time, a route that does not run. So routing is a deterministic search over the real network. Cities are nodes, services are edges, and a weighted k-shortest-paths search returns the best few journeys. The same question always gives the same answer, the app cannot hallucinate a train, and an honest no night train is a valid result. A country question runs through the same data, so night trains in Poland filters the network to every route that runs there rather than asking the model to recall them. This is also the part anyone can read and check line by line, which is the point.
 
 Knowledge comes from retrieval, with citations. The stable questions, how to book, whether a pass is valid, what a couchette is, do not belong in a graph. They belong in documents. I embed a small corpus of guides and operator notes into a vector store and retrieve the closest chunks, then the answer cites them. I chunk one document per operator or per topic, never one per route, because the per-route version I tried earlier produced duplicates and gave the model room to blur facts together.
 
@@ -77,7 +77,7 @@ It is hard to misuse. Every message passes a rate limit, a prompt-injection filt
 
 ## How I measured it
 
-A golden set of questions, each tagged with the tool it should reach and the outcome it should produce, scores the router, the graph, and retrieval, and an optional judge step scores groundedness, an automated check that every answer is supported by the facts the tools returned. The latest run shows routing accuracy at 100 percent live and 96 percent on the offline heuristic, route correctness at 100 percent, retrieval hit-rate at 90 percent, and groundedness at 4.7 out of 5. On top of that, 61 offline tests cover the graph, the retrieval layer, the agent, safety, the data integrity, and the failure paths, including a deliberately broken trace and a throwing tool that must still return an answer.
+A golden set of 27 questions, each tagged with the tool it should reach and the outcome it should produce, scores the router, the graph, and retrieval, and an optional judge step scores groundedness, an automated check that every answer is supported by the facts the tools returned. The latest run shows routing accuracy at 100 percent live and 96 percent on the offline heuristic, route correctness at 100 percent, retrieval hit-rate at 90 percent, and groundedness around 4 out of 5, where a point comes off for a connective phrase the model adds around the facts rather than for an invented one. On top of that, 67 offline tests cover the graph, the retrieval layer, the agent, safety, the data integrity, and the failure paths, including a deliberately broken trace and a throwing tool that must still return an answer.
 
 ## The stack
 
