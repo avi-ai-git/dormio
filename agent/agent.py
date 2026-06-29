@@ -402,9 +402,11 @@ def _knowledge_tool_node(state: AgentState) -> dict:
         hits = knowledge.retrieve(state.get("query", ""), k=4)
         sources = [{"title": h["title"], "source": h["source"]} for h in hits]
         web = list(state.get("web", []))
-        # Back-fill from the web when the corpus has nothing close, or for live questions.
-        if not web and websearch.available() and (
-                not hits or hits[0].get("score", 0) < 0.05 or _wants_live(state.get("query", ""))):
+        # Back-fill from the web only when retrieval finds nothing, or for a live price or
+        # availability question. The similarity score is not a safe gate here, because the
+        # default embedding can score a good guide below zero, which once sent booking and
+        # bike questions to a random web search. The web is for a real gap, not a weak score.
+        if not web and websearch.available() and (not hits or _wants_live(state.get("query", ""))):
             web = websearch.search(state.get("query", ""))
         return {"knowledge": hits, "sources": sources, "web": web}
     except Exception as exc:

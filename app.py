@@ -201,7 +201,7 @@ def render_sidebar() -> None:
         if facts:
             if "fact_idx" not in st.session_state:
                 st.session_state["fact_idx"] = random.randrange(len(facts))
-            st.subheader("💡 Did you know")
+            st.subheader("💡 Did you know?")
             st.caption(facts[st.session_state["fact_idx"] % len(facts)])
             if st.button("💡 Try another", key="another_fact", use_container_width=True):
                 nxt = random.randrange(len(facts))
