@@ -19,6 +19,8 @@ ROUTING_CASES = [
     ("what is the difference between a couchette and a sleeper", "knowledge"),
     ("can I take my bike on a night train", "knowledge"),
     ("how do I get from Gdynia to Vienna and can I take a bike", "both"),
+    ("what night trains run in Poland", "route"),
+    ("night trains in Finland", "route"),
 ]
 
 
@@ -70,6 +72,24 @@ def test_chitchat_redirects_to_night_trains():
     out = agent.answer_query("hello there")
     assert out["intent"] == "chitchat"
     assert "night train" in out["answer"].lower()
+
+
+def test_classify_extracts_country():
+    out = agent.classify("what night trains run in Poland")
+    assert out["intent"] == "route"
+    assert out["country"] == "PL"
+
+
+def test_country_answer_lists_real_routes_not_a_hedge():
+    out = agent.answer_query("night trains in Poland")
+    assert out["route_result"]["mode"] == "country"
+    assert out["route_result"]["country_routes"], "Poland should list real routes"
+    answer = out["answer"].lower()
+    assert "poland" in answer
+    # The old behaviour wrongly claimed Poland was not mapped. Guard against the hedge.
+    assert "not mapped" not in answer
+    assert "not covered" not in answer
+    assert "isn't covered" not in answer
 
 
 if __name__ == "__main__":

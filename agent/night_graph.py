@@ -362,6 +362,43 @@ def country_names(codes) -> list:
     return [COUNTRY_NAMES.get(c, c) for c in (codes or [])]
 
 
+# Spoken or written forms that are not the exact name in COUNTRY_NAMES, so a traveller
+# can say UK or Holland and still land on the right country.
+_COUNTRY_ALIASES = {
+    "uk": "GB", "britain": "GB", "great britain": "GB", "england": "GB",
+    "turkey": "TR", "czech republic": "CZ", "czech": "CZ", "holland": "NL",
+}
+# Folded country name, ISO code, or alias -> ISO code, so "Poland", "poland", and "PL"
+# all resolve to the same place.
+_COUNTRY_KEYS: dict[str, str] = {_fold(name): code for code, name in COUNTRY_NAMES.items()}
+_COUNTRY_KEYS.update({_fold(code): code for code in COUNTRY_NAMES})
+_COUNTRY_KEYS.update({_fold(alias): code for alias, code in _COUNTRY_ALIASES.items()})
+
+
+def resolve_country(name: str) -> str | None:
+    """ISO code for a country named in free text, or None when it is not one we know.
+
+    The country-level twin of resolve() for cities. Folds case and diacritics and
+    accepts the name, the ISO code, or a common alias, so "Poland", "poland", and "PL"
+    all give "PL".
+    """
+    return _COUNTRY_KEYS.get(_fold(name))
+
+
+def routes_in_country(code: str) -> list:
+    """Every night-train service that runs in or through a country, by ISO code.
+
+    Reads the same countries field the Night Map filters on (ui/night_trains.py), so the
+    chat and the map always agree on the set. Sorted by origin then destination for a
+    stable, readable order.
+    """
+    if not code:
+        return []
+    hits = [s for s in _SERVICES if code in s.get("countries", [])]
+    return sorted(hits, key=lambda s: (display_city(s["from_city"]).lower(),
+                                       display_city(s["to_city"]).lower()))
+
+
 if __name__ == "__main__":
     print("services:", len(_SERVICES), "| nodes:", len(_NODES))
     print("Vienna to Rome direct:", [s["operator"] for s in direct("Vienna", "Rome")])

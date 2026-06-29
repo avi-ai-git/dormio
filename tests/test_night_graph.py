@@ -69,6 +69,7 @@ def test_route_lookup_modes():
     assert route_lookup("Gdynia", "Vienna")["mode"] == "routes"
     assert route_lookup("Atlantis", "Rome")["mode"] == "offmap"
     assert route_lookup("", "")["mode"] == "need_input"
+    assert route_lookup("", "", country="PL")["mode"] == "country"
 
 
 def test_plan_routes_ranks_and_is_sensible():
@@ -83,6 +84,24 @@ def test_plan_night_summary_is_grounded_text():
     out = plan_night("Vienna", "Rome")
     assert out["result"]["mode"] == "routes"
     assert "Rome" in out["summary"]
+
+
+def test_resolve_country_by_name_code_and_alias():
+    assert ng.resolve_country("Poland") == "PL"
+    assert ng.resolve_country("poland") == "PL"
+    assert ng.resolve_country("PL") == "PL"
+    assert ng.resolve_country("finland") == "FI"
+    assert ng.resolve_country("UK") == "GB"
+    assert ng.resolve_country("Narnia") is None
+
+
+def test_routes_in_country_matches_the_map_filter():
+    routes = ng.routes_in_country("PL")
+    assert routes, "Poland should have night trains in the data"
+    assert all("PL" in s.get("countries", []) for s in routes)
+    # The chat helper and the Night Map read the same field, so the counts agree.
+    same = [s for s in ng.all_services() if "PL" in s.get("countries", [])]
+    assert len(routes) == len(same)
 
 
 if __name__ == "__main__":

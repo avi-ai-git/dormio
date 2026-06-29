@@ -14,6 +14,8 @@
     {"query": "London to Edinburgh overnight", "intent": "route", "mode": "routes"},
     {"query": "Atlantis to Rome", "intent": "route", "mode": "offmap"},
     {"query": "Bar to Belgrade", "intent": "route", "mode": "routes"},
+    {"query": "What night trains run in Poland?", "intent": "route", "mode": "country"},
+    {"query": "night trains in Finland", "intent": "route", "mode": "country"},
 
     {"query": "is my interrail pass valid on a nightjet sleeper", "intent": "knowledge", "sources": ["interrail-and-eurail-passes.md"]},
     {"query": "what is the difference between a couchette and a sleeper", "intent": "knowledge", "sources": ["accommodation-classes.md"]},
